@@ -1,0 +1,92 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(1, 40, 40);
+}
+.main-nav{
+    background-color: rgb(3, 3, 97);
+    opacity: 0.8;
+}
+.container-fluid{
+    width: 1200px;
+    height: 25px;
+    padding: 10px;
+
+
+}
+#navbarNavDropdown{
+    position: absolute;
+    right: 10px;
+}
+.navbrnad{
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+/* .navbar-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+} */
+
+.nav-item{
+    width: 80px;
+    background-color: rgba(255, 0, 0, 0.045);
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+
+}
+li>a{
+    text-decoration: none;
+    color: rgb(255, 233, 233);
+}
+
+
+
+.container{
+    background-color: rgba(240, 248, 255, 0);
+}
+.left-section{
+    background-color: rgba(245, 245, 220, 0);
+    text-align: center;
+    /* margin: 70px 0px 0px 0px; */
+}
+.profile{
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+}
+
+.right-section{
+    background-color: rgba(0, 0, 255, 0);
+    text-align: center;
+    /* margin: 70px 0px 0px 0px; */
+    border-radius: 20px;
+    color: white;
+}
+
+li{
+    list-style: none;
+}
+
+
+.feature{
+    margin: auto;
+}
+.list-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+.social{
+    margin: 20px;
+
+    border-radius: 5px;
+    font-size: 30px;
+    color: blueviolet;
+}
