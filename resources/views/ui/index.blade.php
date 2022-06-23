@@ -16,33 +16,86 @@
 
 <body>
 
+    {{-- @if ('alert')
+    <div class="alert alert-info">
+        {{"domsdf"}}
+    </div>
+
+
+    @endif --}}
+
     <nav class="navbar navbar-expand-md main-nav fixed-top">
         <div class="container-fluid">
             <a href="#" class="navbar-brand">
                 <img class="navbrnad" src="https://koderapp.com/assets/img/logo-koder.png" alt="nav">
             </a>
 
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item actived">
-                        <a href="{{url('/')}}">Home</a>
+
+
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ url('/contact') }}">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/project') }}">Project</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/about') }}">About</a>
+                </li>
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/login') }}">Log-in</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{url('/contact')}}">Contact</a>
+                        <a class="nav-link" href="{{ url('/register') }}">Register</a>
                     </li>
+                @endguest
+                {{-- @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/manage') }}">Manage</a>
+                        </li>
+                        <li class="nav-item">
+                            <form action="{{url('/logout')}}" method="post" id="logout-form">
+                                @csrf
+                            </form>
+                            <a class="nav-link" type="submit" href=""
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log-out</a>
+                        </li>
+                    @endauth --}}
+
+                @if (Gate::allows('auth-user'))
                     <li class="nav-item">
-                        <a href="#">Project</a>
+                        <a class="nav-link" href="{{ url('/admin') }}">Manage</a>
                     </li>
+
+                @endif
+                @auth
+                <li class="nav-item">
+                    <form action="{{ url('/logout') }}" method="post" id="logout-form">
+                        @csrf
+                    </form>
+                    <a class="nav-link" type="submit" href=""
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log-out</a>
+                </li>
+                @endauth
+
+                @auth
                     <li class="nav-item">
-                        <a href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('/manage')}}">Manage</a>
-                    </li>
-                </ul>
-            </div>
+                    <a href="" class=" nav-link">
+                        <b class="badge rounded-pill bg-danger px-3 pb-2">{{Auth::user()->name}}</b>
+                    </a>
+                </li>
+                @endauth
+
+
+
+
+            </ul>
+
         </div>
     </nav>
+
+
 
     <div class="container mt-5">
         <div class="section">
@@ -58,7 +111,8 @@
                         i'm Beginner Web Developer.</h5>
                     <br>
 
-                    <h5 class="mt-3"><i><b>Can I help you with something in your business?</b></i></h5>
+                    <h5 class="mt-3"><i><b>Can I help you with something in your business?</b></i>&#128516;</h5>
+
 
                 </div>
             </div>

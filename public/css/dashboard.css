@@ -18,6 +18,9 @@ body{
     position: sticky;
     top: 70px;
 }
+.sidebar a{
+    text-decoration: none;
+}
 .main{
     /* position: absolute; */
     position: relative;

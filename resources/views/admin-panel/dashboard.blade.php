@@ -15,7 +15,7 @@
 
     <nav class="navbar navbar-expand-md px-2 text-light navbar-light fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand h5 text-light my-auto">
+            <a class="navbar-brand h5 text-light my-auto" href="{{url('/admin')}}">
                 Portfolio
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -29,18 +29,26 @@
                     </li>
 
                     <li class="nav-item">
-                        <a href="" class="nav-link text-light">Home</a>
+                        <a href="{{url('/')}}" class="nav-link text-light">Home</a>
                     </li>
                 </ul>
 
                 <ul class="navbar-nav auth ">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" href="#" data-bs-toggle="dropdown">
-                            Auth
+                            {{Auth::user()->name}} <span class="badge rounded-pill bg-warning">{{Auth::user()->status}}</span>
                         </a>
-                        <ul class="dropdown-menu w-25">
-                            <li><a class="dropdown-item " href="#">Log out</a></li>
+                        <ul class="dropdown-menu w-25" aria-label="navbarDropdown">
+                            {{-- <li><a class="dropdown-item " href="#">Log out</a></li> --}}
+                            <form action="{{url('/logout')}}" method="post">
+                                {{-- href="{{ url('/logout')}}" URL ကိုလဲထည့်လို့ရ --}}
+                                @csrf
+                                <button class="dropdown-item logout" type="submit" onclick="return confirm('Are u sure')">
+                                    Logout
+                                </button>
+                            </form>
                         </ul>
+
                     </li>
                 </ul>
             </div>
