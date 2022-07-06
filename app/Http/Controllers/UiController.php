@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Skill;
 
 class UiController extends Controller
 {
     public function index() {
-        return view('ui.index');
+        $skills = Skill::all();
+        // return $skills;
+        return view('ui.index',compact('skills'));
     }
 
 

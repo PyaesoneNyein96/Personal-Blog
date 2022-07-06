@@ -21,6 +21,7 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
-        "jquery": "~3.4.1"
+        "jquery": "^3.6.0",
+        "pagepiling.js": "^1.5.6"
     }
 }

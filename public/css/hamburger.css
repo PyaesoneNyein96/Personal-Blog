@@ -1,0 +1,132 @@
+
+.hamburger-menu{
+    width: 40px;
+    height: 20px;
+    margin: auto;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    z-index: 2;
+    transition: all 2s ease;
+}
+
+.hamburger{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 3px;
+    margin-bottom: 5px;
+    margin-top: 2px;
+    border-radius: 50px;
+
+}
+
+.hideline-2{
+    /* opacity: 0; */
+    width: 0px;
+    margin: auto;
+}
+
+.rotateline1{
+    background-color: rgb(32, 168, 50);
+    transform: rotate(315deg) translate(-8px, 0px) ;
+}
+.rotateline3{
+    background-color: wheat;
+    transform: rotate(-315deg) translate(-9.5px, -4.5px);
+}
+
+.line-1,.line-2,.line-3{
+
+    transition: all 0.7s ease;
+}
+/* ------------ */
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+.navbar{
+    min-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 34px;
+    background-color: rgba(9, 9, 86, 0.762);
+}
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: aliceblue;
+    transition: all 2s ease;
+}
+.navbar li a{
+    color: rgb(187, 189, 49);
+    align-items: center;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-item{
+    /* margin-top: 20px; */
+    transition: all .3s ease-in;
+}
+nav .navbrand{
+    font-size: 25px;
+    text-decoration: none;
+    transition: all 1s ease;
+}
+.navbrand:hover{
+    /* transform: scale(1.1); */
+    transform: translateY(-2px) scale(1.1);
+}
+
+.nav-menu-over{
+    background-color: rgba(9, 9, 86, 0.985);
+    width: 100vw;
+    /* width: 100%; */
+    height: 250px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    /* opacity: 1.99; */
+}
+.nav-item:hover{
+    transform: translateY(-3px);
+}
+.nav-item a:hover{
+    color: darkgoldenrod;
+    font-weight: bold;
+}
+.nav-margin{
+    /* transform: translateY(100px); */
+    margin-top: 15px;
+}
+.nav-margin a{
+    color: chartreuse;
+}
+.dropdown-menu{
+    background-color: rgba(20, 20, 108, 0.985);
+    border-radius: 10px;
+    min-width: 5rem;
+    /* margin-left: 50px; */
+}
+.logout{
+    color: aliceblue;
+}
+.logout:hover{
+    background-color:  rgb(13, 13, 114);
+    color: chartreuse;
+    border-radius: 50px;
+}
+
+.nav-menu-tran{
+    transition: all 2s ease;
+}
+
+
+

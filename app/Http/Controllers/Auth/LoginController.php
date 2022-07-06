@@ -44,7 +44,7 @@ class LoginController extends Controller
     // }
     protected function authenticated(){
         if(Gate::allows('auth-user')){
-            return redirect('/admin');
+            return redirect('admin/dashboard');
         }else{
             return redirect('/');
         }

@@ -1,238 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/fa388adf8c.js" crossorigin="anonymous"></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://kit.fontawesome.com/fa388adf8c.js" crossorigin="anonymous"></script>
-    <title>Portfolio</title>
-</head>
-
-<body>
-
-    {{-- @if ('alert')
-    <div class="alert alert-info">
-        {{"domsdf"}}
-    </div>
-
-
-    @endif --}}
-
-    <nav class="navbar navbar-expand-md main-nav fixed-top">
-        <div class="container-fluid">
-            <a href="#" class="navbar-brand">
-                <img class="navbrnad" src="https://koderapp.com/assets/img/logo-koder.png" alt="nav">
-            </a>
-
-
-
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ url('/contact') }}">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/project') }}">Project</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/about') }}">About</a>
-                </li>
-                @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/login') }}">Log-in</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/register') }}">Register</a>
-                    </li>
-                @endguest
-                {{-- @auth
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/manage') }}">Manage</a>
-                        </li>
-                        <li class="nav-item">
-                            <form action="{{url('/logout')}}" method="post" id="logout-form">
-                                @csrf
-                            </form>
-                            <a class="nav-link" type="submit" href=""
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log-out</a>
-                        </li>
-                    @endauth --}}
-
-                @if (Gate::allows('auth-user'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/admin') }}">Manage</a>
-                    </li>
-
-                @endif
-                @auth
-                <li class="nav-item">
-                    <form action="{{ url('/logout') }}" method="post" id="logout-form">
-                        @csrf
-                    </form>
-                    <a class="nav-link" type="submit" href=""
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log-out</a>
-                </li>
-                @endauth
-
-                @auth
-                    <li class="nav-item">
-                    <a href="" class=" nav-link">
-                        <b class="badge rounded-pill bg-danger px-3 pb-2">{{Auth::user()->name}}</b>
-                    </a>
-                </li>
-                @endauth
-
-
-
-
-            </ul>
-
-        </div>
-    </nav>
-
-
-
-    <div class="container mt-5">
-        <div class="section">
-            <div class="row">
-                <div class="col-md-6 left-section">
-                    <img src="https://rb.gy/egtmqs" alt="Profile" class="profile">
-                </div>
-                <div class="col-md-6 right-section">
-
-                    <h3 class="mt-5"><i>Hi, There!</i></h3>
-                    <br>
-                    <h5 class="mt-4">Hey I'm PyaeSone,
-                        i'm Beginner Web Developer.</h5>
-                    <br>
-
-                    <h5 class="mt-3"><i><b>Can I help you with something in your business?</b></i>&#128516;</h5>
-
-
-                </div>
-            </div>
-        </div>
-
-        <div class="feature">
-            <ul class="list-group">
-                <li class="list-item social"><i class="fab fa-html5"></i></li>
-                <li class="list-item social"><i class="fab fa-css3"></i></li>
-                <li class="list-item social"><i class="fab fa-php"></i></li>
-                <li class="list-item social"><i class="fab fa-laravel"></i></li>
-                <li class="list-item social"><i class="fab fa-github"></i></li>
-                <li class="list-item social"><i class="fab fa-git-alt"></i></li>
-
-            </ul>
-        </div>
-
-        <div class="feature-2">
-            <div class="paragraph">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, laudantium quibusdam! Fuga voluptas
-                    earum harum sit! Rerum ab est repellendus!0
-                </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, laudantium quibusdam! Fuga voluptas
-                    earum harum sit! Rerum ab est repellendus!0
-                </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, laudantium quibusdam! Fuga voluptas
-                    earum harum sit! Rerum ab est repellendus!0
-                </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, laudantium quibusdam! Fuga voluptas
-                    earum harum sit! Rerum ab est repellendus!0
-                </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, laudantium quibusdam! Fuga voluptas
-                    earum harum sit! Rerum ab est repellendus!0
-                </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, laudantium quibusdam! Fuga voluptas
-                    earum harum sit! Rerum ab est repellendus!0
-                </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, laudantium quibusdam! Fuga voluptas
-                    earum harum sit! Rerum ab est repellendus!0
-                </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, laudantium quibusdam! Fuga voluptas
-                    earum harum sit! Rerum ab est repellendus!0
-                </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, laudantium quibusdam! Fuga voluptas
-                    earum harum sit! Rerum ab est repellendus!0
-                </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At, laudantium quibusdam! Fuga voluptas
-                    earum harum sit! Rerum ab est repellendus!0
-                </p>
-            </div>
-        </div>
-
-        <div class="footer"></div>
-    </div>
-
-
-
-    <script src="js/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>
-
-{{-- @extends('layouts.app')
+@extends('ui.master-ui')
 
 @section('content')
-
-<script src="https://kit.fontawesome.com/fa388adf8c.js" crossorigin="anonymous"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<link rel="stylesheet" href="public/css/style.css">
-<nav class="navbar navbar-expand-md main-nav">
-    <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item actived">
-                    <a href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Project</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#">About</a>
-                </li>
-            </ul>
+    <div class="row">
+        <div class="col aboutme mt-3">
+            <h3>About Me</h3>
         </div>
     </div>
-</nav>
+@endsection
 
-<div class="container">
-    <div class="section">
-        <div class="row">
-            <div class="col-md-6 left-section">
-                <img src="https://rb.gy/egtmqs" alt="Profile" class="profile" width="400px">
+@section('section-2')
+    <div class="row my-2">
+
+        <div class="col-md-7 skill-box">
+            <h5 class="text-start text-light">Skills</h5>
+            @foreach ($skills as $skill)
+            <div class="row">
+                <div class="col-9 progress ">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: {{$skill->percent}}%" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">{{$skill->percent}}%</div>
+                </div>
+                <div class="col-3 my-2"><span class="bg-secondary badge">
+                    {{$skill->name}}
+                </span></div>
             </div>
-            <div class="col-md-6 right-section">
 
-                <h3 class="mt-5"><i>Hi, There!</i></h3>
-                <br>
-                <h5 class="mt-4">Hey I'm PyaeSone and Newbie for Codding</h5>
-                <br>
+            @endforeach
 
-                <h5 class="mt-3"><i><b>Can I help you with something in your business?</b></i></h5>
+            {{-- ------------ --}}
 
+
+        </div>
+
+        <div class="col-md-5 mt-4">
+            <div class="aboutmeparagraph">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt labore deleniti eum voluptate ullam
+                    dolorem! Ipsam molestias enim autem, sequi aspernatur, corporis asperiores soluta ratione quaerat
+                    voluptas, et quae architecto!
+                </p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt labore deleniti eum voluptate ullam
+                    dolorem! Ipsam molestias enim autem, sequi aspernatur, corporis asperiores soluta ratione quaerat
+                    voluptas, et quae architecto!
+                </p>
             </div>
         </div>
-    </div>
 
-    <div class="feature">
-        <ul class="list-group">
-            <li class="list-item social"><i class="fab fa-html5"></i></li>
-            <li class="list-item social"><i class="fab fa-css3"></i></li>
-            <li class="list-item social"><i class="fab fa-php"></i></li>
-            <li class="list-item social"><i class="fab fa-laravel"></i></li>
-            <li class="list-item social"><i class="fab fa-github"></i></li>
-            <li class="list-item social"><i class="fab fa-git-alt"></i></li>
-
-        </ul>
     </div>
-</div>
-@endsection --}}
+@endsection
+
+@section('contact')
+    <div class="contact">
+        <h5>something</h5>
+        <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, hic voluptate totam quod
+            illo commodi
+            reprehenderit voluptas pariatur provident cum laborum. Accusamus voluptatem odit enim, illo suscipit fuga cumque
+            et aperiam pariatur magnam quibusdam iure repellendus necessitatibus quae voluptates molestias a placeat
+            ri officia? Error atque ipsa corrupti vero, illo soluta quam harum
+            pariatur consequatur fugit asperiores adipisci animi maiores dicta sed commodi nobis debitis provident expedita
+            voluptatibus nostrum. Quod, beatae cupiditate sequi fugit nesciunt alias recusandae quia veniam dolorem
+            repudiandae. Fuga impedit a esse mollitia temporibus, reiciendis quaerat odio ullam delectus labore eius
+            voluptatum laudantium sit corrupti. Laborum doloribus tempore accusantium ipsa earum voluptatem vel perspiciatis
+            ratione. Nesciunt, ex consectetur? Animi voluptatum accusantium, assumenda sequi ad quis consequatur repellendus
+            quasi.</p>
+    </div>
+@endsection
+
+@section('footer')
+    <div class=" row footer bg-dark">
+        <div class="col-4">Contact</div>
+        <div class="col-4">Active</div>
+        <div class="col-4">Social</div>
+    </div>
+@endsection

@@ -25,7 +25,7 @@ body{
 .container{
     background-color: rgba(240, 248, 255, 0);
     position: relative;
-    top: 60px;
+    top: 70px;
 }
 .left-section{
     background-color: rgba(245, 245, 220, 0);
@@ -61,8 +61,36 @@ li{
 }
 .social{
     margin: 20px;
-
     border-radius: 5px;
     font-size: 30px;
     color: blueviolet;
+}
+
+/* ----------- */
+
+.aboutme{
+    background-color: rgb(20, 78, 128);
+    text-align: center;
+    color: aqua;
+}
+.section-2{
+    background-color: rgb(30, 64, 94);
+    height: fit-content;
+    padding: 20px;
+}
+.skill-box{
+    height: 300px;
+    overflow: auto;
+}
+
+
+.aboutmeparagraph{
+    color: aliceblue;
+}
+
+.footer{
+    color: aliceblue;
+    height: 200px;
+    align-items: center;
+    text-align: center;
 }
