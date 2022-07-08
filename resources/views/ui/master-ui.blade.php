@@ -21,7 +21,14 @@
     <nav class="navbar navbar-expand-md main-nav fixed-top">
         <div class="container-fluid">
             <a href="#" class="navbar-brand">
-                <img class="navbrnad" src="https://koderapp.com/assets/img/logo-koder.png" alt="nav">
+                {{-- <img class="navbrnad" src="https://koderapp.com/assets/img/logo-koder.png" alt="nav"> --}}
+                <div class="code-sign">
+                    <div class="code code-1 "></div>
+                    <div class="code code-2 "></div>
+                    <div class="code code-3 "></div>
+                    <div class="code code-4 "></div>
+                    <div class="code-middle"></div>
+                </div>
             </a>
 
 
@@ -154,7 +161,7 @@
         </div>
 
         <div class="feature-2">
-            @yield('content')
+            @yield('feature-2')
         </div>
 
         <div class="section-2">
@@ -173,6 +180,7 @@
 
 
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="{{url('js/ui.js')}}"></script>
 
 </body>
 

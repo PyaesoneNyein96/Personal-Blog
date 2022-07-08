@@ -3,13 +3,7 @@ body{
     margin: 0;
     padding: 0;
 }
-/* .navbar{
-    opacity: 0.8;
-    background-color: rgba(3, 3, 97, 0.518);
-    position: sticky;
-    position: absolute;
-    top: 0px    ;
-} */
+
 .auth{
     margin-right: 20px;
 }
@@ -18,24 +12,41 @@ body{
 
 .sidebar{
     height: 100%;
-    background-color: rgb(3, 3, 46);
 }
 .sidebar-list-group{
     width: fit-content;
     position: fixed;
     top: 70px;
 }
+.list-group-item{
+    background-color: rgba(104, 43, 226, 0.09);
+    transition: all 0.2s ease;
+}
 
 .sidebar a{
     text-decoration: none;
+    color: rgb(52, 48, 25);
 }
+.list-group-item:hover{
+    transform: translateY(-1.5px);
+}
+/* ----------- */
 
 .main{
-    /* position:absolute;
-    right:20px;
-    top: 70px; */
-    max-width: 77%;
+    max-width: 80%;
     margin-top: 50px;
+    min-height: fit-content;
 }
 
+body::-webkit-scrollbar{
+    width: 0.8em;
+    /* background:linear-gradient(rgb(31, 42, 108),transparent,rgb(38, 51, 124)); */
+    background-color: rgb(31, 42, 108);
+    position: fixed;
+}
+body::-webkit-scrollbar-thumb{
+    /* width: 3px; */
+    background:linear-gradient(transparent,rgb(98, 4, 4),transparent)
+    /* border-radius: 13px; */
+}
 

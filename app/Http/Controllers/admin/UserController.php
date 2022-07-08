@@ -15,7 +15,8 @@ class UserController extends Controller
     //     ]);
     // }
     public function index(){
-        $userdata = User::all();
+        // $userdata = User::all();
+        $userdata = User::paginate(10);
             return view('admin-panel.users.index')->with('userdata',$userdata);
             return view('admin-panel.users.edit')->with('userdata',$userdata);
 

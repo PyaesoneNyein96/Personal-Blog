@@ -7,17 +7,97 @@ body{
 .main-nav{
     background-color: rgb(3, 3, 97);
     opacity: 0.8;
+    height: 75px;
+    background:linear-gradient(rgb(3, 3, 97),transparent);
 }
 
 
-.navbrnad{
-    width: 40px;
-    height: 20px;
-    position: absolute;
-    left: 10px;
-    top: 18px;
+.navbar-brand{
+    width:fit-content;
+    /* height: 60px; */
+    /* background-color: aliceblue; */
+    /* padding-top: 10px; */
+    /* margin-top: 0px; */
     display: inline;
 }
+
+.nav-link{
+    color: rgb(219, 231, 154);
+    transition: all 0.5s ease-in-out;
+}
+.nav-link:hover{
+    transform: translateY(-3px);
+}
+/* ----------- */
+
+.code-sign{
+    width: 2.8em;
+    /* width: fit-content; */
+    height: 1.7em;
+    padding-bottom: 50px;
+    /* background-color: brown; */
+}
+.code{
+    /* opacity: 0; */
+    background-color: aliceblue;
+    width: 1em;
+    height: 0.1em;
+    transition: all 1.8s ease-in;
+}
+
+.code-middle{
+    /* width: 1.2em; */
+    width: 0;
+    height: 0.1em;
+    opacity: 1;
+    transition: all 4s ease-in-out;
+}
+.line-a{
+    opacity: 1;
+    background-color: rgb(255, 255, 255);
+    transform: rotate(-40deg) translate(-0.29em, 0.4em);
+    border-radius: 10px;
+}
+.line-b{
+    opacity: 1;
+    background-color: aliceblue;
+    transform: rotate(40deg) translate(0.7em, 0.75em);
+    border-radius: 10px;
+}
+
+.line-c{
+    opacity: 1;
+    background-color: rgb(255, 255, 255);
+    transform: rotate(40deg) translate(1.5em, -0.9em);
+    border-radius: 10px;
+}
+.line-d{
+    opacity: 1;
+    background-color: aliceblue;
+    transform: rotate(-40deg) translate(0.78em, 1.7em);
+    border-radius: 10px;
+}
+.line-e{
+    width: 1.2em;
+    background-color: aliceblue;
+    transform: rotate(-70deg) translate(-0.1em, 0.88em);
+    border-radius: 10px;
+    /* padding-left: 10px; */
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------- */
 
 
 /* --- */
@@ -69,7 +149,7 @@ li{
 /* ----------- */
 
 .aboutme{
-    background-color: rgb(20, 78, 128);
+    /* background-color: rgb(20, 78, 128); */
     text-align: center;
     color: aqua;
 }
@@ -85,7 +165,36 @@ li{
 
 
 .aboutmeparagraph{
+    width: 100%;
+    min-height: 100px;
     color: aliceblue;
+    background-color: black;
+    padding: 50px;
+}
+.aboutmeparagraph h3{
+    font-size: 2em;
+}
+body::-webkit-scrollbar{
+    width: 10px;
+    background-color: rgb(6, 42, 74);
+    cursor: pointer;
+}
+
+body::-webkit-scrollbar-thumb{
+    background:linear-gradient( transparent,rgba(185, 255, 81, 0.341),transparent);
+    border-radius: 10px;
+
+}
+
+.skill-box::-webkit-scrollbar{
+    width: 10px;
+
+    background: linear-gradient(transparent,rgba(99, 16, 16, 0.201), transparent);
+    border-radius: 20px;
+}
+.skill-box::-webkit-scrollbar-thumb{
+    background:linear-gradient( transparent,rgba(185, 255, 81, 0.673),transparent);
+    border-radius: 40px;
 }
 
 .footer{

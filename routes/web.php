@@ -5,6 +5,7 @@ use App\Http\Controllers\UiController;
 use App\Http\Controllers\admin\AdminDashboardController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\SkillController;
+use App\Http\Controllers\admin\ProjectController;
 
 
 // ---- Ui-Route ----
@@ -49,6 +50,8 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','isAdmin']],function(){
 
 
     Route::resource('skills', SkillController::class);
+
+    Route::resource('projects', ProjectController::class);
 
 });
 // diff syntex but not look like default embed Route::group->prefix
