@@ -11,12 +11,13 @@ body{
 /* -----end of nav ----- */
 
 .sidebar{
+    margin-top: 50px;
     height: 100%;
 }
 .sidebar-list-group{
     width: fit-content;
     position: fixed;
-    top: 70px;
+    top: 100px;
 }
 .list-group-item{
     background-color: rgba(104, 43, 226, 0.09);
@@ -34,7 +35,7 @@ body{
 
 .main{
     max-width: 80%;
-    margin-top: 50px;
+    margin-top: 70px;
     min-height: fit-content;
 }
 
