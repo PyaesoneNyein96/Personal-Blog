@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
     <link rel="stylesheet" href="/css/hamburger.css">
-
     <link rel="stylesheet" href="/css/dashboard.css">
-    {{-- <script src="public\js\master.js"></script> --}}
+    <link rel="stylesheet" href="/css/project.css">
+    <link rel="stylesheet" href="/css/usertable.css">
     <title>@yield('title')</title>
 </head>
 

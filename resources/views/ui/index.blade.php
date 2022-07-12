@@ -2,7 +2,7 @@
 
 @section('feature-2')
     <div class="row">
-        <div class="col aboutme mt-3">
+        <div class="col aboutme my-5">
             <h3>About Me</h3>
         </div>
     </div>
@@ -11,17 +11,18 @@
 @section('section-2')
     <div class="row my-2">
 
-        <div class="col-md-7 skill-box">
-            <h5 class="text-start text-light">Skills</h5>
+        <div class="col-md-7 skill-box " >
+            <h5 class="text-start text-light position-sticky top-0 btn btn-outline-info">Skills <span class="badge bg-warning">{{count($skills)}}</span> </h5>
             @foreach ($skills as $skill)
                 <div class="row">
-                    <div class="col-9 progress ">
+                    <div class="col-9 progress my-auto">
                         <div class="progress-bar bg-success" role="progressbar" style="width: {{ $skill->percent }}%"
                             aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{ $skill->percent }}%</div>
                     </div>
-                    <div class="col-3 my-2"><span class="bg-secondary badge">
+                    <div class="col-3 my-2">
+                        <div class="bg-secondary badge float-end my-auto">
                             {{ $skill->name }}
-                        </span></div>
+                        </div></div>
                 </div>
             @endforeach
 
@@ -30,17 +31,13 @@
 
         </div>
 
-        <div class="col-md-5 mt-4">
+        <div class="col-md-5 mt-4 text-center bordered">
             <div class="aboutmeparagraph">
-                <h3>Scroll bar</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt labore deleniti eum voluptate ullam
-                    dolorem! Ipsam molestias enim autem, sequi aspernatur, corporis asperiores soluta ratione quaerat
-                    voluptas, et quae architecto!
-                </p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt labore deleniti eum voluptate ullam
-                    dolorem! Ipsam molestias enim autem, sequi aspernatur, corporis asperiores soluta ratione quaerat
-                    voluptas, et quae architecto!
-                </p>
+                <i><h5 class="text-info">
+                    <a href="https://github.com/PyaesoneNyein96" target="_blank" class="nav-link ">Here is my Github address ...</a>
+                </h5></i>
+                <a href="#" class="nav-link h5">Download my Resume</a>
+
             </div>
         </div>
 
@@ -49,21 +46,37 @@
 
 @section('contact')
     <div class="contact">
-        <h5 class="text-warning">
-            something
+        <h5 class="text-warning text-center my-4">
+            My Project
         </h5>
         <div class="row">
-            <div class="col-4">
-
-            </div>
-            <div class="col-4">
-
-            </div>
-            <div class="col-4">
-
-            </div>
-        </div>
+            @foreach ($projects as $project)
+                <div class="col-6 col-md-4">
+                    <a href="{{ $project->url }}" target="_blank" class="nav-link">
+                        <div class="card py-4 mb-3">
+                            <div class="card-title text-center">
+                                    {{ $project->name }}
+                            </div>
+                            <div class="card-body d-flex justify-content-center">
+                                <i class="fa-solid fa-diagram-project fa-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="caption text-center">
+                            {{$project->name}}
+                        </div>
+                    </a>
+                </div>
+            @endforeach
     </div>
+    <div class="row">
+
+        <div class="col-12 d-flex my-4 justify-content-center mr-4 ">
+
+            {{$projects->links()}}
+        </div>
+
+
+     </div>
 @endsection
 
 @section('footer')

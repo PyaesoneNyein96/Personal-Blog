@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Project;
 
 class ProjectController extends Controller
 {
@@ -14,7 +15,11 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view('admin-panel.Projects.index-project');
+        $projects = Project::latest()->paginate(4);
+        return view('admin-panel.Projects.index-project',compact('projects'));
+
+        // $projects = Project::latest()->paginate();
+        // return view('admin-panel.Projects.index-project',compact('projects'));
     }
 
     /**
@@ -37,7 +42,25 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+    //   $validator = validator($request->all(),[
+    //     'name' =>'required',
+    //     'url'  =>'required',
+    //   ]);
+    //   if($validator->fails()){
+    //     return back();
+    //   }
+      $request->validate([
+        'name' =>'required',
+        'url'  =>'required',
+      ]);
+      Project::create([
+        'name'=>$request->name,
+        'url' =>$request->url,
+      ]);
+
+
+
+      return redirect()->route('projects.index')->with('info',"Your Project \"$request->name\" is added!");
     }
 
     /**
@@ -59,7 +82,9 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        return view('admin-panel.master');
+        // dd("hello-$id");
+        $editProject = Project::find($id);
+        return view('admin-panel.Projects.edit-project',compact('editProject'));
     }
 
     /**
@@ -71,7 +96,18 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $updateProjectInfo = Project::find($id);
+        $beforeUpdate = Project::find($id);
+        $request->validate([
+            'name'=>'required',
+            'url'=>'required',
+        ]);
+        $updateProjectInfo->update([
+            'name'=>request()->name,
+            'url'=>request()->url,
+        ]);
+
+        return redirect()->route('projects.index')->with('info',"Your Project \"$beforeUpdate->name\" was updated to \"$updateProjectInfo->name\" !");
     }
 
     /**
@@ -82,6 +118,11 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = Project::find($id);
+        $DelSMS = Project::find($id);
+        $delete->delete();
+
+
+        return redirect()->back()->with('info',"Your Project \"$DelSMS->name\" has been Deleted !");
     }
 }

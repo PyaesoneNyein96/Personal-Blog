@@ -1,0 +1,12 @@
+
+
+@media (max-width: 700px) {
+   .small{
+    font-size: 10px;
+   }
+}
+
+.small{
+    color: rgb(202, 222, 239);
+}
+

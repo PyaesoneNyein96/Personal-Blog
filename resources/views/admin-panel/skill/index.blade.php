@@ -3,7 +3,7 @@
 @section('title', 'skill')
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid mx-0 px-0">
 
         <div class="card">
             <div class="card-header">
@@ -27,8 +27,9 @@
             </div>
 
             <div class="card-body">
-                <table
-                    class="table table-striped table-dark table-bordered border-info table-hover text-center align-middle">
+                <div class="table-responsive">
+                    <table
+                    class="table table-striped table-dark table-bordered border-info table-hover text-center align-middle table-sm small">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -40,9 +41,9 @@
                     <tbody>
                         @foreach ($skillData as $skills)
                             <tr>
-                                <td>{{ $skills->id }}</td>
-                                <td>{{ $skills->name }}</td>
-                                <td>{{ $skills->percent }}</td>
+                                <td class="small">{{ $skills->id }}</td>
+                                <td class="small">{{ $skills->name }}</td>
+                                <td>{{ $skills->percent }} %</td>
                                 <td class="">
                                     {{-- <form action="{{ url("admin/skills/$skills->id") }}" method="POST">
                                         @csrf @method('delete') --}}
@@ -82,6 +83,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                </div>
             </div>
 
             <div class="card-footer">

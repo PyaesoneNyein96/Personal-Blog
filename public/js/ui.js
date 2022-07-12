@@ -9,6 +9,7 @@ const codeMidele = document.querySelector('.code-middle');
 // const code = document.querySelector('.code');
 
 window.addEventListener('load',()=>{
+
     code1.classList.add('line-a');
     code2.classList.add('line-b');
     code3.classList.add('line-c');

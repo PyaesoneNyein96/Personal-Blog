@@ -15,7 +15,7 @@ class SkillController extends Controller
      */
     public function index()
     {
-        $skillData = Skill::paginate(5);
+        $skillData = Skill::latest()->paginate(5);
         return view('admin-panel.skill.index',compact('skillData'));
     }
 
@@ -37,13 +37,18 @@ class SkillController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = validator($request->all(),[
-            'name' =>'required',
+
+        $request->validate([
+            'name'=>'required',
             'percent'=>'required',
         ]);
-        if($validator->fails()){
-            return back()->withErrors($validator);
-        }
+        // $validator = validator($request->all(),[
+        //     'name' =>'required',
+        //     'percent'=>'required',
+        // ]);
+        // if($validator->fails()){
+        //     return back()->withErrors($validator);
+        // }
 
        Skill::create([
         'name'=>$request->name,

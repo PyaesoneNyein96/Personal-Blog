@@ -2,7 +2,7 @@
 // const navbar = document.querySelector(".navbar");
 const hamburgermenu = document.querySelector(".hamburger-menu");
 const navmenu = document.querySelector(".nav-menu");
-const li = document.querySelectorAll(".nav-item");
+// const li = document.querySelectorAll(".nav-item");
 const database = document.querySelector(".database");
 
 const line1 = document.querySelector(".line-1");
@@ -11,13 +11,15 @@ const line3 = document.querySelector(".line-3");
 
 
 // reload for databaese
+if(database){
+    database.addEventListener("click", ()=>{
+        setTimeout(() => {
+            location.reload();
+        }, 10);
 
-database.addEventListener("click", ()=>{
-    setTimeout(() => {
-        location.reload();
-    }, 10);
+    });
+}
 
-});
 
 
 // const mediaQuery ='(max-width: 700px)';
@@ -46,6 +48,7 @@ database.addEventListener("click", ()=>{
 
 
 hamburgermenu.addEventListener("click", () => {
+    console.log('hey');
     if (hamburgermenu.classList.contains("isOpen"))
     {
         line2.classList.remove("hideline-2");
