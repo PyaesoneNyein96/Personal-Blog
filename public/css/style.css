@@ -2,17 +2,26 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: rgb(1, 40, 40);
+    /* background: linear-gradient(rgb(78, 73, 73),transparent,rgb(86, 61, 61),rgb(98, 97, 97)); */
 }
 
+.backgroundcover{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    opacity: 0.7;
+}
 
 .navbar{
     width: 100%;
     height: 80px;
-    background:linear-gradient(rgb(38, 51, 124) 65%,transparent);
+    background:linear-gradient(rgb(36, 47, 112) 15%,transparent);
     /* position: sticky; */
     position: fixed;
-    top: 0;
+    top: -5px;
     z-index: 5;
     opacity: 0.95;
 }
@@ -47,7 +56,8 @@ body{
     color: rgb(98, 187, 83);
 }
 .nav-item a:hover{
-    opacity: 0.8;
+    opacity: 0.9;
+    color: chartreuse;
     transform: translateY(-5px);
 }
 .nav-link:hover{
@@ -133,7 +143,7 @@ body{
         background-color: rgba(6, 30, 51, 0.81);
         /* background-color: rgba(51, 6, 44, 0.81); */
         position: absolute;
-        width: 150px;
+        width: 170px;
         right: 0px;
         top: 0px;
         height: 100vh;
@@ -234,6 +244,7 @@ body{
     border-radius: 50%;
     width: 350px;
     height: 350px;
+    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .right-section{
@@ -273,49 +284,67 @@ li{
     color: aqua;
 }
 .section-2{
-    background-color: rgba(30, 64, 94, 0.174);
+    background-color: rgba(30, 64, 94, 0);
     height: fit-content;
     padding: 20px;
 }
 .skill-box{
     height: 300px;
     overflow: auto;
+    visibility: hidden;
+    transition: all 0.5s ease;
 }
 
 
+.skill,
+.skill-box:hover,
+.skill-box:focus {
+transition: all 2s ease;
+visibility: visible;
+}
+
+.aboutmeparagraph .nav-link{
+    color: coral;
+}
 .aboutmeparagraph{
     width: 100%;
     min-height: 100px;
-    color: aliceblue;
     padding: 50px;
     border-radius: 30px;
-    background-color: aliceblue;
+    /* background-color: aliceblue;
+    background: linear-gradient(gray,skyblue,transparent); */
 }
 #about{
-    background-color: blueviolet;
+    background-color: rgba(137, 43, 226, 0);
 }
 .aboutmeparagraph h3{
     font-size: 2em;
 }
 body::-webkit-scrollbar{
-    width: 10px;
+    width: 0px;
+    background-color: rgb(6, 42, 74);
+    cursor: pointer;
+}
+body::-webkit-scrollbar:hover{
+    width: 12px;
     background-color: rgb(6, 42, 74);
     cursor: pointer;
 }
 
-body::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb:hover{
     background:linear-gradient( transparent,rgba(185, 255, 81, 0.341),transparent);
     border-radius: 10px;
 
 }
 
 .skill-box::-webkit-scrollbar{
-    width: 10px;
-    background: linear-gradient(transparent,rgba(99, 16, 16, 0.201), transparent);
+    width: 8px;
+    background: linear-gradient(transparent,rgba(99, 16, 16, 0.501), transparent);
     border-radius: 20px;
 }
+
 .skill-box::-webkit-scrollbar-thumb{
-    background:linear-gradient( transparent,rgba(185, 255, 81, 0.673),transparent);
+    background:linear-gradient( transparent,rgb(60, 147, 67),transparent);
     border-radius: 40px;
 }
 

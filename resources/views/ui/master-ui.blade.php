@@ -118,7 +118,9 @@
         </div>
     </div> --}}
 
-
+    <div class="container-fluid">
+        <img src="https://i.pinimg.com/originals/ab/37/6d/ab376d512ab95c230a13f93f1208bd78.png" alt="img-cover" class="backgroundcover">
+    </div>
 
 
     {{-- insted code -----------------------------******* --}}
@@ -141,6 +143,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#blogs">Blogs</a>
                 </li>
 
                 @auth
@@ -219,6 +224,8 @@
 
 
     <div class="container mt-5">
+
+
         <div class="section">
             <div class="row">
                 <div class="col-md-6 left-section">
@@ -237,7 +244,7 @@
         </div>
 
         <div class="feature">
-            <ul class="list-group">
+            <ul class="list-group px-3">
                 <li class="list-item social"><i class="fab fa-html5"></i></li>
                 <li class="list-item social"><i class="fab fa-css3"></i></li>
                 <li class="list-item social"><i class="fab fa-php"></i></li>
@@ -252,14 +259,18 @@
             @yield('feature-2')
         </div>
 
+        {{-- skill  --}}
         <div class="section-2">
-            @yield('section-2')
+            @yield('skill-section')
         </div>
 
+        {{-- blog --}}
         <div class="contact" id="project">
-            @yield('contact')
+            @yield('project-content')
         </div>
-
+        <div class="blog-content">
+            @yield('blog-content')
+        </div>
         <div class="footer">
             @yield('footer')
         </div>

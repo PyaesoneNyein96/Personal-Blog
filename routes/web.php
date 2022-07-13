@@ -14,8 +14,8 @@ Route::get('/',[
     UiController::class,'index'
 ]);
 
-Route::get('/main',[
-    UiController::class,'index'
+Route::get('/blogs',[
+    UiController::class,'indexBlogs'
 ]);
 
 //---- Admin-Route -----
@@ -54,6 +54,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','isAdmin']],function(){
     Route::resource('projects', ProjectController::class);
 
 });
+
 // diff syntex but not look like default embed Route::group->prefix
 
 
