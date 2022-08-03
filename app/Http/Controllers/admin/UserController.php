@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Blog;
 
 class UserController extends Controller
 {
@@ -17,14 +18,13 @@ class UserController extends Controller
     public function index(){
         // $userdata = User::all();
         $userdata = User::paginate(10);
-            return view('admin-panel.users.index')->with('userdata',$userdata);
+            return view('admin-panel.users.index-user')->with('userdata',$userdata);
     }
 
     public function edit($id){
         $editData = User::find($id);
-        // return "something-{$id}";
-        return view('admin-panel.users.edit',[
-            'editData' => $editData
+        return view('admin-panel.users.edit-user',[
+            'editData' => $editData,
         ]);
     }
 
@@ -72,10 +72,15 @@ class UserController extends Controller
 
 
     public function delete($id){
-        $delete = user::find($id);
+
+        $delete = User::find($id);
+        $del = Blog::where('user_id', $id)->delete();
+
         $delete->delete();
 
-        return back()->with('info', "\"$delete->name\" has been deleted");
+
+        return back()->with('info', "User \"$delete->name\"and all of his Blogs have been deleted !");
+
         // return back()->with('del-info', "\"$delete->name\" has been deleted");
     }
 

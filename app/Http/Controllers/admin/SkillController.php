@@ -16,7 +16,7 @@ class SkillController extends Controller
     public function index()
     {
         $skillData = Skill::latest()->paginate(5);
-        return view('admin-panel.skill.index',compact('skillData'));
+        return view('admin-panel.skill.index-skill',compact('skillData'));
     }
 
     /**
@@ -117,10 +117,11 @@ class SkillController extends Controller
      */
     public function destroy($id)
     {
+        $request=Skill::find($id);
         $deleteSkill = Skill::find($id);
         $deleteSkill->delete();
 
-        return redirect('admin/skills');
+        return redirect('admin/skills')->with('info'," \"$request->name\" has been deleted");
         return back();
     }
 }

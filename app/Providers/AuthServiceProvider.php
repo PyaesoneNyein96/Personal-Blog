@@ -30,6 +30,27 @@ class AuthServiceProvider extends ServiceProvider
             return $user->status == 'admin';
         });
 
+        // Gate::define('cmt-del', function($user, $comment){
+        //     if($user->id == $comment->user_id){
+        //         return true;
+        //     }elseif($user->status == 'admin'){
+        //         return true;
+        //     }else{
+        //         return false;
+        //     }
+        // });
+        Gate::define('cmt-del', function($user, $comment){
+            return $user->id == $comment->user_id || $user->status == 'admin';
+        });
 
+        Gate::define('normal-user', function($user){
+           if($user->status == 'admin'){
+            return true;
+           }elseif($user->status == 'user'){
+            return true;
+           }else{
+            return false;
+           }
+        });
     }
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User;
+
 
 // use Illuminate\Support\Facades\Gate;
 
@@ -23,7 +25,8 @@ class AdminDashboardController extends Controller
 
 
     public function index(){
-        return view('admin-panel.dashboard');
+        $adminUser = User::where('status','admin')->get();
+        return view('admin-panel.dashboard',compact('adminUser'));
     }
 
     // public function __construct(){

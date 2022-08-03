@@ -57,9 +57,6 @@ class ProjectController extends Controller
         'name'=>$request->name,
         'url' =>$request->url,
       ]);
-
-
-
       return redirect()->route('projects.index')->with('info',"Your Project \"$request->name\" is added!");
     }
 

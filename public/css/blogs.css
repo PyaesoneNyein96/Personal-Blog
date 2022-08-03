@@ -1,0 +1,226 @@
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.blog-left{
+    background-color:transparent;
+}
+.blog-right{
+    position: fixed;
+    /* top: 105px; */
+    right: 30px;
+}
+
+.search-input{
+    margin-left: 20px;
+    background-color: rgba(106, 106, 255, 0.453);
+}
+
+.articles{
+    /* height: 850px; */
+}
+.blog-img{
+    width: 100%;
+    max-height: 400px;
+}
+.blog-paragraph{
+    max-height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title-category{
+    font-size: large;
+    margin-bottom: 20px;
+    margin-left: 30%;
+    display: block;
+    width: 100%;
+}
+
+.list-category{
+    margin-left: 30%;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.category-link {
+    position: relative;
+    left: auto;
+    right: auto;
+    font-size: 17px;
+    text-decoration: none;
+    color: rgb(128, 180, 248);
+    text-shadow: 0.5px 0.5px rgb(8, 1, 1) ;
+}
+.category-link:hover{
+    color: rgb(88, 148, 27);
+    /* transform: translateY(-10px); */
+    }
+
+.list-category:hover{
+    transform: translateY(-5px);
+    color: rgb(188, 255, 120);
+}
+
+
+
+
+@media (max-width:700px) {
+    .search{
+        position: absolute;
+        right: -200px;
+        transition: all 0.3s ease-in-out;
+    }
+    /* -----  */
+
+    .search-change{
+        width: 100%;
+        height: 50px;
+        position: sticky;
+        /* align-items: center; */
+        display: inline-flex;
+        margin-left: 20px;
+        justify-content: center;
+        /* background-color: wheat; */
+        transition: all 0.5s ease-in-out;
+    }
+    .btn-fake{
+        color: white;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+    }
+    .btn-fake:hover{
+        color: chartreuse;
+        transform: scale(1.1);
+    }
+
+    .btn-fake-hide{
+        position: absolute;
+        transition: all 1s ease;
+        right: -200px;
+    }
+
+    .search-back{
+        position: absolute;
+        right: 0px;
+        transition: all 0.3s ease-in-out;
+        z-index: 6;
+        /* background-color: red; */
+        width: 300px;
+    }
+    .search-input{
+        width: 150px;
+        /* position: absolute; */
+    }
+    .input-hide{
+        position: relative;
+        right: 0px;
+        transition: all 0.3s ease-in-out;
+    }
+
+
+
+    .list-category a{
+        font-size: small;
+    }
+    .title-category{
+        font-size: medium;
+    }
+
+}
+
+@media (min-width:701px) {
+    .search{
+        position: relative;
+        right: 0px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .search-change{
+        position: absolute;
+        opacity: 0.5;
+        top: 0;
+        right: -120%;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .search-model{
+        display: none;
+    }
+}
+
+
+/* --------------------- */
+
+.header{
+    width: 85%;
+    margin: auto;
+}
+.blog-detail-img{
+    width: 85%;
+    display: block;
+    margin: auto;
+}
+.detail-paragraph{
+    width: 85%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-justify: auto;
+}
+.detail-footer{
+    width: 85%;
+    display:block;
+    margin: auto;
+}
+
+
+/* ----------- */
+
+.down-edge{
+    display: block;
+    /* justify-content: space-between; */
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0);
+
+}
+
+
+.accordion-flush{
+    width: 100%;
+    /* background-color: transparent; */
+}
+
+.accordion-item{
+    /* background-color: black; */
+    border-radius: 30px;
+}
+.accordion-header{
+    background-color: rgb(6, 1, 1);
+}
+.accordion-button{
+    background-color: rgb(14, 14, 14);
+    color: rgb(255, 255, 255);
+    border-radius: 25px;
+}
+.accordion-body{
+    display: flex;
+    background-color: rgb(0, 0, 0);
+}
+
+.list-group-item{
+    /* display: block; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(240, 248, 255, 0.945);
+    z-index: -1;
+}
+.btn-close{
+    align-items: center;
+}
+.cmt-sub{
+    margin-left: 5px;
+}

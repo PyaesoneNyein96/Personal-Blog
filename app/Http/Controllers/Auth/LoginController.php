@@ -42,11 +42,28 @@ class LoginController extends Controller
     //     }
 
     // }
+
+    public function showLoginForm(){
+        $previousURL = url()->previous();
+        $baseURL = url()->to('/');
+        if
+        // ($previousURL !== $baseURL.'/login')
+            ($previousURL !== "http://localhost:8000/login")
+        {
+            session()->put('url.intended',$previousURL);
+        }
+            return view('auth.login');
+
+
+
+    }
+
     protected function authenticated(){
         if(Gate::allows('auth-user')){
             return redirect('admin/dashboard');
         }else{
-            return redirect('/');
+            // return redirect('/');
+           $this->showLoginForm();
         }
     }
 

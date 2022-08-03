@@ -48,20 +48,39 @@ if(database){
 
 
 hamburgermenu.addEventListener("click", () => {
-    console.log('hey');
+    // console.log('hey');
     if (hamburgermenu.classList.contains("isOpen"))
     {
         line2.classList.remove("hideline-2");
         line1.classList.remove("rotateline1");
         line3.classList.remove("rotateline3");
         navmenu.classList.remove("menu-over");
+
         hamburgermenu.classList.remove("isOpen");
 
     } else {
         line2.classList.add("hideline-2");
         line1.classList.add("rotateline1");
         line3.classList.add("rotateline3");
-        navmenu.classList.toggle("menu-over");
+        navmenu.classList.add("menu-over");
+
         hamburgermenu.classList.add('isOpen');
+
+        // setTimeout(() => {
+        //     navmenu.classList.remove("menu-over");
+        //     hamburgermenu.classList.remove('isOpen');
+        //     line2.classList.remove("hideline-2");
+        // line1.classList.remove("rotateline1");
+        // line3.classList.remove("rotateline3");
+        // }, 30000);
     }
 });
+
+window.addEventListener('load', ()=> {
+    console.log(window.innerWidth);
+    hamburgermenu.classList.add('come-btn-hbgr');
+});
+
+
+
+

@@ -1,4 +1,4 @@
-@extends('admin-panel.master')
+@extends('admin-panel.master-dashboard')
 
 @section('title', 'Create-Skills')
 

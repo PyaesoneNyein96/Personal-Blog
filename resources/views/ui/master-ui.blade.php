@@ -12,188 +12,105 @@
 
     <script src="https://kit.fontawesome.com/fa388adf8c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Portfolio</title>
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    {{-- <link rel="stylesheet" href="css/style.css"> --}}
+    <link rel="stylesheet" href="{{asset('css/blogs.css')}}">
+
+    <title>@yield('title')</title>
 </head>
 
 <body>
 
 
-    {{-- <nav class="navbar navbar-expand-md main-nav fixed-top">
-        <div class="container-fluid">
-            <a href="#" class="navbar-brand"> --}}
-    {{-- <img class="navbrnad" src="https://koderapp.com/assets/img/logo-koder.png" alt="nav"> --}}
-    {{-- <div class="code-sign">
-                    <div class="code code-1 "></div>
-                    <div class="code code-2 "></div>
-                    <div class="code code-3 "></div>
-                    <div class="code code-4 "></div>
-                    <div class="code-middle code-5"></div>
-                </div>
-            </a>
 
-
-
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
-                </li> --}}
-    {{-- <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/project') }}">Project</a>
-                </li> --}}
-    {{-- <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/about') }}">About</a>
-                </li>
-                @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/login') }}">Log-in</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/register') }}">Register</a>
-                    </li>
-                @endguest --}}
-    {{-- @auth
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/manage') }}">Manage</a>
-                        </li>
-                        <li class="nav-item">
-                            <form action="{{url('/logout')}}" method="post" id="logout-form">
-                                @csrf
-                            </form>
-                            <a class="nav-link" type="submit" href=""
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log-out</a>
-                        </li>
-                    @endauth --}}
-
-    {{-- @if (Gate::allows('auth-user'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('admin/dashboard') }}">Manage</a>
-                    </li>
-                @endif
-                @auth
-                    <li class="nav-item"> --}}
-
-
-    {{-- <a class="nav-link" type="submit" href=""
-                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log-out
-                        </a> --}}
-    {{-- <a href="" type="submit" class="nav-link" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">
-                            Logout
-                        </a>
-                    </li>
-                @endauth
-
-                @auth
-                    <li class="nav-item">
-                        <a href="" class=" nav-link">
-                            <b class="badge rounded-pill @if (Auth::user()->status == 'admin')
-                                bg-danger @endif bg-warning px-3 pb-2">{{ Auth::user()->name }}</b>
-                        </a>
-                    </li>
-                @endauth
-
-            </ul>
-        </div>
-    </nav> --}}
-
-
-    {{-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Are you sure to Logout !</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <div class="modal-footer">
-                    <form action="{{ url('/logout') }}" method="post">
-                        @csrf
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
-                        <button type="submit" class="btn btn-primary">Logout</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
-    <div class="container-fluid">
-        <img src="https://i.pinimg.com/originals/ab/37/6d/ab376d512ab95c230a13f93f1208bd78.png" alt="img-cover" class="backgroundcover">
+    <div class="container-fluid bg-cover">
+        {{-- <img src="https://i.pinimg.com/originals/ab/37/6d/ab376d512ab95c230a13f93f1208bd78.png" alt="img-cover"
+            class="backgroundcover"> --}}
+        {{-- <img src="https://rb.gy/g9yywi" alt="bg-img" class="backgroundcover"> --}}
     </div>
 
 
     {{-- insted code -----------------------------******* --}}
     <nav class="navbar">
-        <div class="container-fluid">
-            <a href="#" class="navbar-brand">
+        <a href="#" class="navbar-brand">
+            <div class="code-sign">
+                <div class="code code-1 "></div>
+                <div class="code code-2 "></div>
+                <div class="code code-3 "></div>
+                <div class="code code-4 "></div>
+                <div class="code-middle code-5"></div>
+            </div>
+        </a>
 
-                <div class="code-sign">
-                    <div class="code code-1 "></div>
-                    <div class="code code-2 "></div>
-                    <div class="code code-3 "></div>
-                    <div class="code code-4 "></div>
-                    <div class="code-middle code-5"></div>
-                </div>
-            </a>
+        <ul class="nav-menu">
 
-            <ul class="nav-menu">
-                <li class="nav-item form-check form-switch ">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                </li>
-                <li class="nav-item">
+            {{-- <li class="nav-item form-check form-switch ">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+            </li> --}}
+            <li class="nav-item">
+                <a class="nav-link active" href="{{ url('/') }}">Home</a>
+            </li>
+
+            <li class="nav-item">
                     <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
                 </li>
+            <li class="nav-item">
+                <a class="nav-link blogsTab" href="{{ url('/blogs') }}">Blogs</a>
+            </li>
+
+            @auth
                 <li class="nav-item">
-                    <a class="nav-link" href="#blogs">Blogs</a>
+                    <a href="https://tinyurl.com/22xaw8n6" target="_blank" class="nav-link database">Data-base</a>
                 </li>
+                @if (Gate::allows('auth-user',auth::user()->status))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('admin/dashboard') }}">Manage</a>
 
-                @auth
-                    <li class="nav-item">
-                        <a href="https://tinyurl.com/22xaw8n6" target="_blank" class="nav-link database">Data-base</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('admin/dashboard') }}">Manage</a>
-                    </li>
-                @endauth
-                @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#project">Project</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/login') }}">Log-in</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/register') }}">Register</a>
-                    </li>
-                @endguest
+                </li>
+                @endif
 
-                @auth
-                    <li class="nav-item dropdown pt-2">
-                        <a class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+            @endauth
+            @guest
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                    {{-- <audio src="{{asset('storage\audioEffect\mixkit-arcade-game-jump-coin-216.wav')}}" class="effect"></audio> --}}
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#project">Project</a>
+                    {{-- <audio src="{{asset('storage\audioEffect\mixkit-arcade-game-jump-coin-216.wav')}}" class="effect"></audio> --}}
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/login') }}">Log-in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/register') }}">Register</a>
+                </li>
+            @endguest
 
-                            <span class="badge bg-danger rounded-pill pb-2 px-3">{{ Auth::user()->name }}</span>
+            @auth
+                <li class="nav-item dropdown pt-2">
+                    <a class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                        aria-expanded="false">
 
-                        </a>
-                        <ul class="dropdown-menu">
-                            <button class="dropdown-item logout" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                Logout
-                            </button>
-                        </ul>
-                    </li>
-                @endauth
-            </ul>
-        </div>
+                        <span class="badge bg-danger rounded-pill pb-2 px-3">{{ Auth::user()->name }}</span>
+
+                    </a>
+                    <ul class="dropdown-menu">
+                        <button class="dropdown-item logout" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            Logout
+                        </button>
+                    </ul>
+                </li>
+            @endauth
+        </ul>
 
         <div class="hamburger-menu">
             <div class="hamburger line-1"></div>
             <div class="hamburger line-2"></div>
             <div class="hamburger line-3"></div>
         </div>
+
+
     </nav>
 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -223,43 +140,21 @@
 
 
 
-    <div class="container mt-5">
+    <div class="container-fluid body mx-0 ">
 
-
-        <div class="section">
-            <div class="row">
-                <div class="col-md-6 left-section">
-                    <img src="https://rb.gy/egtmqs" alt="Profile" class="profile">
-                </div>
-                <div class="col-md-6 right-section">
-
-                    <h3 class="mt-5"><i>Hi, There!</i></h3>
-                    <br>
-                    <h5 class="mt-4">Hey I'm PyaeSone,
-                        i'm Beginner Web Developer.</h5>
-                    <br>
-                    <h5 class="mt-3"><i><b>Can I help you with something in your business?</b></i>&#128516;</h5>
-                </div>
-            </div>
+        <div class="intro">
+            @yield('intro')
         </div>
 
-        <div class="feature">
-            <ul class="list-group px-3">
-                <li class="list-item social"><i class="fab fa-html5"></i></li>
-                <li class="list-item social"><i class="fab fa-css3"></i></li>
-                <li class="list-item social"><i class="fab fa-php"></i></li>
-                <li class="list-item social"><i class="fab fa-laravel"></i></li>
-                <li class="list-item social"><i class="fab fa-github"></i></li>
-                <li class="list-item social"><i class="fab fa-git-alt"></i></li>
-
-            </ul>
+        <div class="tools">
+            @yield('feature-tools')
         </div>
 
         <div class="feature-2" id="about">
             @yield('feature-2')
         </div>
 
-        {{-- skill  --}}
+        {{-- skill --}}
         <div class="section-2">
             @yield('skill-section')
         </div>
@@ -269,7 +164,7 @@
             @yield('project-content')
         </div>
         <div class="blog-content">
-            @yield('blog-content')
+            @yield('blogs')
         </div>
         <div class="footer">
             @yield('footer')
@@ -278,9 +173,11 @@
 
 
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="{{ url('js/master.js') }}"></script>
-    <script src="{{ url('js/ui.js') }}"></script>
+    <script src="{{URL::asset("js/bootstrap.bundle.min.js")}}" ></script>
+    {{-- <script src="{{ url('js/master.js') }}"></script>
+    <script src="{{ url('js/ui.js') }}"></script> --}}
+    <script src="{{ URL::asset('js/ui.js') }}"></script>
+    <script src="{{ URL::asset('js/master.js') }}"></script>
 
 </body>
 

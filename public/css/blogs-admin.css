@@ -1,0 +1,23 @@
+
+.card-admin{
+    height: 600px;
+}
+.blog-paragraph{
+    max-height: 150px;
+    min-height: 100px;
+    /* width: auto; */
+    height: 150px;
+    overflow: hidden;
+    color: rgb(133, 35, 35);
+}
+.img{
+    /* min-height: 200px;
+    max-height: 260px; */
+    height: 200px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.form-select{
+    width: 260px;
+}
+

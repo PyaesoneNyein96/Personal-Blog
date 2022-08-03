@@ -6,6 +6,10 @@ use App\Http\Controllers\admin\AdminDashboardController;
 use App\Http\Controllers\admin\UserController;
 use App\Http\Controllers\admin\SkillController;
 use App\Http\Controllers\admin\ProjectController;
+use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\admin\BlogsController;
+use App\Http\Controllers\ReactController;
+use App\Http\Controllers\CommentController;
 
 
 // ---- Ui-Route ----
@@ -14,9 +18,62 @@ Route::get('/',[
     UiController::class,'index'
 ]);
 
+
+// Blogs ----
 Route::get('/blogs',[
     UiController::class,'indexBlogs'
 ]);
+
+Route::get("/blogs/detail/{id}",[
+    UiController::class,'Blogdetail'
+]);
+Route::get("/blogs/search",[
+    UiController::class,'Search'
+]);
+Route::get("/blogs/searchByCategory/{id}",[
+    UiController::class,'searchByCategory'
+]);
+
+// Reaction ----
+Route::post("/blogs/like/{blog_id}",[
+    ReactController::class, 'like'
+]);
+
+// Route::post("/blogs/like/{blog_id}",[
+//     ReactController::class, 'like'
+// ]);
+
+// Comments ----
+// Route::post("/blogs/comment/{blog_id}",[
+//     CommentController::class, 'comment'
+// ]);
+
+// Route::post("/blogs/comment",[
+//     CommentController::class, 'createComment'
+// ]);
+
+// Route::get("/blogs/commentDelete/{id}",[
+//     CommentController::class, 'deleteComment'
+// ]);
+
+// Route::get("/blogs/status/{id}",[
+//     CommentController::class, 'commentHide'
+// ]);
+
+
+Route::group(['prefix' => 'blogs', 'middleware'=>'auth','isAdmin'], function(){
+    Route::post("/comment",[
+        CommentController::class, 'createComment'
+    ]);
+
+    Route::get("/commentDelete/{id}",[
+        CommentController::class, 'deleteComment'
+    ]);
+
+    Route::Post("/status/{id}",[
+        CommentController::class, 'commentHide'
+    ]);
+});
 
 //---- Admin-Route -----
 
@@ -32,28 +89,36 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','isAdmin']],function(){
     Route::get('/dashboard',[
         AdminDashboardController::class,'index'
     ]);
+    // users ---
     Route::get('/users', [
         UserController::class,'index'
     ]);
-
     Route::get('/users/edit/{id}', [
         UserController::class,'edit'
     ]);
-
     Route::post('/users/update/{id}', [
         UserController::class,'update'
     ]);
-
     Route::post('/users/delete/{id}', [
         UserController::class,'delete'
     ]);
 
-
+    // Skills ---
     Route::resource('skills', SkillController::class);
 
+    // Project ---
     Route::resource('projects', ProjectController::class);
 
+    // Categories ---
+    Route::resource('Categories', CategoryController::class);
+
+    // Blogs ---
+    Route::resource('blogs', BlogsController::class);
+
 });
+
+
+
 
 // diff syntex but not look like default embed Route::group->prefix
 
