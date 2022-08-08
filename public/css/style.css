@@ -5,6 +5,7 @@ body {
     padding: 0;
     /* background: linear-gradient(to bottom rgb(78, 73, 73),transparent,rgb(86, 61, 61),rgb(98, 97, 97)); */
     background: linear-gradient(45deg, rgb(0, 0, 0), rgb(0, 0, 0) 40%, rgb(49, 54, 39));
+    /* background-color: rgb(221, 201, 201); */
 
 }
 
@@ -27,13 +28,14 @@ body::-webkit-scrollbar-thumb:hover {
 
 /* -------body-------- */
 .backgroundcover {
-    position: fixed;
+    position: absolute;
     width: 100vw;
-    height: 100vh;
-    top: 0;
+    height: 520px;
+    top: -80px;
     left: 0;
-    z-index: -2;
+    z-index: -1;
     opacity: 0.7;
+    filter: blur(3px);
 }
 
 /* ---------end of backgroundcover --------*/
@@ -48,7 +50,7 @@ body::-webkit-scrollbar-thumb:hover {
 .navbar {
     width: 100%;
     height: 80px;
-    background: linear-gradient(rgba(36, 47, 112, 0.893) 15%, transparent);
+    background: linear-gradient(rgba(3, 4, 11, 0.893) 15%, transparent);
     position: absolute;
     top: 0;
     z-index: 5;
@@ -80,7 +82,7 @@ body::-webkit-scrollbar-thumb:hover {
     list-style: none;
     transition: all 0.7s ease-in-out;
     align-items: center;
-    color: rgb(137, 243, 118);
+    color: rgb(183, 216, 177);
 }
 
 .nav-item a:hover {
@@ -292,11 +294,11 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 
-.container {
-    /* background-color: rgb(127, 138, 147); */
+/* .container {
+    background-color: rgb(127, 138, 147);
     position: relative;
     top: 0px;
-}
+} */
 
 /* --------- */
 
@@ -310,14 +312,16 @@ body::-webkit-scrollbar-thumb:hover {
     border-radius: 50%;
     width: 350px;
     height: 350px;
-    box-shadow: 0 10px 8px 0 rgba(0, 0, 0, 0.159), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
     transition: all 0.8s ease-in-out;
+    border: 1px dotted red;
 }
 
 .profile:hover {
     transform: scale(1.03) rotate(-2deg);
     cursor: pointer;
     user-select: none;
+    box-shadow: 0px 5px 20px 5px rgba(231, 191, 191, 0.764), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .right-section {
@@ -381,10 +385,10 @@ li {
 
 
 .aboutme {
-    /* background-color: rgb(20, 78, 128); */
+    margin-top: 100px;
     text-align: center;
-    color: aqua;
-    font-family: cursive;
+    color: rgb(255, 255, 255);
+    /* font-family: cursive; */
     cursor: pointer;
     user-select: none;
 }
@@ -392,10 +396,12 @@ li {
 /* -------about-me -------- */
 
 /* ----------Section 2 progress skills------------ */
+
+
 .section-2 {
     background-color: rgba(30, 64, 94, 0);
     height: fit-content;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .skill-box {
@@ -426,7 +432,7 @@ li {
 }
 
 .progress:hover {
-    transform: scale(1.1);
+    transform: scale(1.04) translateX(20px);
 }
 
 .skill,
@@ -470,26 +476,52 @@ li {
 
 /* -----projects------ */
 
+
 .project-title {
     user-select: none;
     cursor: pointer;
-    color: rgb(49, 53, 190);
+    color: white;
 }
 
+.project-div{
+    position: relative;
+    bottom: 20%;
+    border-radius: 5%;
+    /* background-color: aliceblue; */
+}
+.project-cover{
+    /* position: relative; */
+    height: 150px;
+    margin: 0px;
+    /* top: 60px; */
+    border-radius: 10px;
+    background-color: rgba(3, 27, 49, 0.766);
+    box-shadow: rgba(252, 235, 235, 0.759) 0px 5px 15px;
+}
+
+
 .project {
-    background-color: antiquewhite;
-    transition: all 0.3s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.859);
+  /* box-shadow: rgba(252, 235, 235, 0.759) 0px 5px 15px; */
+  transition: all 0.3s ease-in-out;
 }
 
 .project:hover {
-    transform: translateY(-10px);
-    background: linear-gradient(transparent, rgb(93, 1, 1)80%, transparent);
-    /* background-color: rgba(137, 43, 226, 0.207); */
+    transform: translateY(-5px);
     color: rgb(255, 254, 253);
     box-shadow: rgba(252, 235, 235, 0.759) 0px 5px 15px;
-    /* border: 5px solid darkblue; */
-    /* border-radius: 20px; */
 }
+
+
+.project-text{
+    background-color: transparent;
+    margin-left: 30px;
+    /* margin-top: 100px; */
+    padding: 20px;
+    border: 1px solid lightblue;
+    border-radius: 5px;
+}
+
 
 /* -------End of Project------- */
 
@@ -567,7 +599,7 @@ li {
     z-index: -1;
 }
 .footer-container{
-    margin-top: 120px;
+    margin-top: 150px;
     background: linear-gradient( transparent,rgba(8, 11, 28, 0.919) 75%);
 }
 .footer-row{
@@ -577,19 +609,20 @@ li {
     width: fit-content;
     margin-top: 0px;
     margin-bottom: 50px;
-    margin-left: 20%;
+    margin-left: 10%;
 }
 .list-footer li{
     margin-bottom: 7px;
     /* font-family:  Tahoma;     */
     font-weight: 600;
     transition: all 0.5s ease-in-out;
+    min-width: 200px;
 }
 
 .list-footer li a{
     text-decoration: none;
     cursor: pointer;
-    color: rgb(0, 0, 0);
+    color: rgb(74, 62, 62);
     transition: all 0.5s ease-in-out;
 }
 .list-footer li a:hover{
@@ -604,9 +637,20 @@ li {
     position: absolute;
     /* top: 30px; */
     bottom: 40px;
-    right: 30px;
+    right: 20px;
     width: 22%;
 }
+@media (max-width:700px) {
+    .avator{
+        position: absolute;
+        /* top: 30px; */
+        bottom: 40px;
+        right: 20px;
+        width: 42%;
+
+    }
+}
+
 .footer-text{
     /* margin-top: 80px; */
     /* margin: auto; */

@@ -104,7 +104,7 @@ class ProjectController extends Controller
             'url'=>request()->url,
         ]);
 
-        return redirect()->route('projects.index')->with('info',"Your Project \"$beforeUpdate->name\" was updated to \"$updateProjectInfo->name\" !");
+        return redirect()->route('projects.index')->with('info',"Successfully Updated!");
     }
 
     /**

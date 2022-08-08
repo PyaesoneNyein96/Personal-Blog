@@ -87,7 +87,7 @@ class CategoryController extends Controller
         category::find($id)->update([
             'name' =>request()->name,
         ]);
-        return redirect()->route('Categories.index')->with('info', "\"$updateCategory->name\" has been Successed Edited");
+        return redirect()->route('Categories.index')->with('info', "\"$updateCategory->name\" successfully updated!");
     }
 
     /**

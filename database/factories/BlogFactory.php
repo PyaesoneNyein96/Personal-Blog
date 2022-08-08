@@ -18,7 +18,6 @@ class BlogFactory extends Factory
             'content'=>$this->faker->paragraph,
             'category_id'=>rand(1,3),
             'user_id' =>rand(1,5),
-            // 'image' =>'https://source.unsplash.com/random',
         ];
     }
 }

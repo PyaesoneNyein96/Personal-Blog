@@ -18,6 +18,9 @@ Route::get('/',[
     UiController::class,'index'
 ]);
 
+Route::get('/', [
+    UiController::class,'index'
+]);
 
 // Blogs ----
 Route::get('/blogs',[
@@ -103,6 +106,24 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','isAdmin']],function(){
         UserController::class,'delete'
     ]);
 
+
+    // Admin Dashboard--------
+
+    Route::get("/dashboard/edit/{id}",[
+        AdminDashboardController::class,'AdminEdit'
+    ]);
+    Route::post("/dashboard/update/{id}", [
+        AdminDashboardController::class,'updateAdmin'
+    ]);
+    Route::post("/dashboard/delete/{id}", [
+        AdminDashboardController::class,'deleteAdmin'
+    ]);
+    Route::get("dashboard/blogs/{id}", [
+        AdminDashboardController::class,'adminBlogs'
+    ]);
+
+
+
     // Skills ---
     Route::resource('skills', SkillController::class);
 
@@ -116,20 +137,6 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','isAdmin']],function(){
     Route::resource('blogs', BlogsController::class);
 
 });
-
-
-
-
-// diff syntex but not look like default embed Route::group->prefix
-
-
-
-// Route::prefix('admin')->group(function () {
-//     Route::get('/dashboard',[
-//         AdminDashboardController::class,'index'
-//     ])->middleware('auth','isAdmin');
-// });
-//  included prefix and middleware but do not obey DRY principle --
 
 
 

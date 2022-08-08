@@ -66,7 +66,7 @@ class UserController extends Controller
             'email' =>$request->email,
             'status' =>$request->status,
         ]);
-        return redirect('admin/users')->with('info','Update Successfully');
+        return redirect('admin/users')->with('info','Successfully Updated');
     }
 
 
@@ -74,12 +74,14 @@ class UserController extends Controller
     public function delete($id){
 
         $delete = User::find($id);
-        $del = Blog::where('user_id', $id)->delete();
+        // $del = Blog::where('user_id', $id)->get();
+        // $del->delete();
 
         $delete->delete();
 
 
-        return back()->with('info', "User \"$delete->name\"and all of his Blogs have been deleted !");
+        // return back()->with('info', "User \"$delete->name\"and all of his Blogs have been deleted !");
+        return back()->with('info', "User $delete->name and all of his Blogs have been deleted !");
 
         // return back()->with('del-info', "\"$delete->name\" has been deleted");
     }

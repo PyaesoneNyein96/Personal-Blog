@@ -20,7 +20,7 @@
     <title>@yield('title')</title>
 </head>
 
-<body>
+<body >
 
 
     {{-- <nav class="navbar fixed-top dropdown">
@@ -65,13 +65,13 @@
 
     <nav class="navbar">
        <div class="container-fluid">
-        <a href="{{ url('admin/dashboard') }}" class="navbar-brand">Admin Dashboard</a>
+        <a href="{{ url('admin/dashboard') }}" class="navbar-brand text-light">Admin Dashboard</a>
 
         <ul class="nav-menu">
-            <li class="nav-item form-check form-switch ">
+            {{-- <li class="nav-item form-check form-switch ">
                 <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                {{-- <label class="form-check-label" for="flexSwitchCheckDefault"></label> --}}
-            </li>
+                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+            </li> --}}
             <li class="nav-item">
                 <a href="{{ url('/') }}" class="nav-link">Home</a>
             </li>
@@ -131,9 +131,9 @@
                 <div class="list-group sidebar-list-group ">
 
                     <li class="list-group-item">
-                        <a href="#">
+                        <a href={{url("admin/dashboard")}} >
                             <i class="fa-solid fa-chart-line"></i>
-                            <span class="d-none d-lg-inline">Active Log</span>
+                            <span class="d-none d-lg-inline">Admin Profile</span>
                         </a>
                     </li>
                     <li class="list-group-item">
@@ -162,12 +162,12 @@
                             <span class="d-none d-lg-inline">Blogs</span>
                         </a>
                     </li>
-                    <li class="list-group-item">
+                    {{-- <li class="list-group-item">
                         <a href="{{url('admin/about')}}" class="">
                             <i class="fa-solid fa-circle-info"></i>
                             <span class="d-none d-lg-inline">About</span>
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="list-group-item">
                         <a href="{{ url('admin/users') }}">
                             <i class="fa-solid fa-people-roof "></i>

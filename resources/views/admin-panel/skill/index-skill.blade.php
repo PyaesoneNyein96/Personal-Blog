@@ -5,6 +5,13 @@
 @section('content')
     <div class="container-fluid mx-0 px-0">
 
+
+        @if (session('info'))
+        <div class="alert alert-success alert-dismissible show fade">
+            <div> {{ session('info') }}</div>
+            <button class="btn-close float-end" data-bs-dismiss="alert"></button>
+        </div>
+    @endif
         <div class="card">
             <div class="card-header">
                 <div class="row">
@@ -17,49 +24,43 @@
                     </div>
 
                 </div>
-                @if (session('info'))
-                    <div class="alert alert-info alert-dismissable show fade">
-                        <button class="btn btn-close float-end" data-bs-dismiss="alert"></button>
-                        <div><b>{{ session('info') }}</b></div>
 
-                    </div>
-                @endif
             </div>
 
             <div class="card-body">
                 <div class="table-responsive">
                     <table
-                    class="table table-striped table-dark table-bordered border-info table-hover text-center align-middle table-sm small">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Percent</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($skillData as $skills)
+                        class="table table-striped table-dark table-bordered border-info table-hover text-center align-middle table-sm small">
+                        <thead>
                             <tr>
-                                <td class="small">{{ $skills->id }}</td>
-                                <td class="small">{{ $skills->name }}</td>
-                                <td>{{ $skills->percent }} %</td>
-                                <td class="">
-                                    <form action="{{ url("admin/skills/$skills->id") }}" method="POST">
-                                        @csrf @method('delete')
-                                    <a href="{{ url("admin/skills/$skills->id/edit") }}" class="btn btn-success btn-sm">
-                                        Edit <i class="fa-regular fa-pen-to-square"></i></a>
-
-
-                                    <button class="btn btn-danger btn-sm" type="submit">
-                                        Delete <i class="fa-regular fa-trash-can"></i></button>
-                                    </form>
-                                </td>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Percent</th>
+                                <th>Action</th>
                             </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($skillData as $skills)
+                                <tr>
+                                    <td class="small">{{ $skills->id }}</td>
+                                    <td class="small">{{ $skills->name }}</td>
+                                    <td>{{ $skills->percent }} %</td>
+                                    <td class="">
+                                        <form action="{{ url("admin/skills/$skills->id") }}" method="POST">
+                                            @csrf @method('delete')
+                                            <a href="{{ url("admin/skills/$skills->id/edit") }}"
+                                                class="btn btn-success btn-sm">
+                                                Edit <i class="fa-regular fa-pen-to-square"></i></a>
 
-                        @endforeach
-                    </tbody>
-                </table>
+
+                                            <button class="btn btn-danger btn-sm" type="submit">
+                                                Delete <i class="fa-regular fa-trash-can"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
 

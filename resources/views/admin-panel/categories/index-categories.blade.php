@@ -21,12 +21,11 @@
 
                 </div>
                 @if (session('info'))
-                    <div class="alert alert-info alert-dismissable show fade">
-                        <button class="btn btn-close float-end" data-bs-dismiss="alert"></button>
-                        <div><b>{{ session('info') }}</b></div>
-
-                    </div>
-                @endif
+                <div class="alert alert-success alert-dismissible show fade">
+                    <div> {{ session('info') }}</div>
+                    <button class="btn-close float-end" data-bs-dismiss="alert"></button>
+                </div>
+            @endif
             </div>
 
             <div class="card-body">

@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Blog;
 use App\Models\React;
 use App\Models\Comment;
+use App\Models\User;
 use Auth;
 // use Illuminate\Support\Facades\Gate;
 
@@ -23,7 +24,8 @@ class UiController extends Controller
         $projects = Project::Paginate(3);
         $Blogs = Blog::latest()->take(3)->get();
         $moreBlogs = Blog::latest()->paginate(4);
-        return view('ui.index',compact('skills','projects','Blogs','moreBlogs'));
+        $profileUser = User::where('name','psn')->first();
+        return view('ui.index',compact('skills','projects','Blogs','moreBlogs','profileUser'));
     }
 
     public function indexBlogs(){

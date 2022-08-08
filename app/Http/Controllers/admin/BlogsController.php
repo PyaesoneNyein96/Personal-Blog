@@ -111,8 +111,10 @@ class BlogsController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $Blogs = Blog::find($id);
 
+        // dd($Blogs->id);
        $data = $request->validate([
             'title'=>'required',
             'image'=>'nullable|image|mimes:png,jpg',

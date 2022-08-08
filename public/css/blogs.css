@@ -224,3 +224,98 @@ body{
 .cmt-sub{
     margin-left: 5px;
 }
+
+/* ------footer-------- */
+
+
+
+.footer-img{
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    left: 0;
+    /* opacity: 0.3; */
+    /* background: linear-gradient(black 25%,transparent); */
+    /* background: linear-gradient(rgba(36, 47, 112, 0.893) 25%, transparent); */
+    filter: blur(3px);
+    z-index: -1;
+}
+.footer-container{
+    margin-top: 150px;
+    background: linear-gradient( transparent,rgba(8, 11, 28, 0.919) 75%);
+}
+.footer-row{
+    padding-top: 30px;
+}
+.list-footer{
+    width: fit-content;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    margin-left: 10%;
+}
+.list-footer li{
+    margin-bottom: 7px;
+    /* font-family:  Tahoma;     */
+    font-weight: 600;
+    transition: all 0.5s ease-in-out;
+    min-width: 200px;
+}
+
+.list-footer li a{
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    transition: all 0.5s ease-in-out;
+}
+.list-footer li a:hover{
+    color: cadetblue;
+}
+.list-footer li:hover{
+    transform: translateY(-4px);
+
+}
+
+.avator-blog{
+    position: absolute;
+    /* top: 30px; */
+    bottom: -100px;
+    right: 20px;
+    width: 22%;
+}
+@media (max-width:700px) {
+    .avator{
+        position: absolute;
+        /* top: 30px; */
+        bottom: 40px;
+        right: 20px;
+        width: 42%;
+
+    }
+}
+
+.footer-text{
+    /* margin-top: 80px; */
+    /* margin: auto; */
+    margin-left: 55px;
+    width: 350px;
+    text-align: start;
+    /* text-align: center; */
+    font-size: smaller
+}
+.footer-head{
+    margin-left: 55px;
+    margin-top: 10px;
+    text-align: start;
+}
+.footer-icon{
+    margin-left: 55px;
+    margin-bottom: 15px;
+}
+.footer-icon li:hover{
+   color: chartreuse;
+}
+.footer-7{
+    /* width: 50%; */
+    background-color: rgba(165, 42, 42, 0.415);
+    margin-bottom: 20px;
+}

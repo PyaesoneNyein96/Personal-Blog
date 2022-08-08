@@ -1,5 +1,5 @@
 body{
-    background-color: rgba(0, 0, 255, 0.132);
+    /* background-color: rgba(65, 29, 29, 0.186); */
 
     /* padding: 20px; */
 }
@@ -11,7 +11,7 @@ body{
 .navbar{
     width: 100%;
     height: fit-content;
-    background:linear-gradient(rgb(38, 51, 124) 65%,transparent);
+    background:linear-gradient(rgba(15, 17, 29, 0.697) 65%,transparent);
     /* position: sticky; */
     position: fixed;
     top: 0;
@@ -65,13 +65,14 @@ body{
     top: 100px;
 }
 .list-group-item{
-    background-color: rgba(104, 43, 226, 0.09);
+    background-color: rgba(104, 43, 226, 0.005);
     transition: all 0.2s ease;
 }
 
 .sidebar a{
     text-decoration: none;
-    color: rgb(52, 48, 25);
+    font-size: large;
+    color: rgb(42, 36, 3);
 }
 .list-group-item:hover{
     transform: translateY(-1.5px);

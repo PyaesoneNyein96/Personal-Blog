@@ -23,12 +23,6 @@
 
 
 
-    <div class="container-fluid bg-cover">
-        {{-- <img src="https://i.pinimg.com/originals/ab/37/6d/ab376d512ab95c230a13f93f1208bd78.png" alt="img-cover"
-            class="backgroundcover"> --}}
-        {{-- <img src="https://rb.gy/g9yywi" alt="bg-img" class="backgroundcover"> --}}
-    </div>
-
 
     {{-- insted code -----------------------------******* --}}
     <nav class="navbar">
@@ -44,25 +38,24 @@
 
         <ul class="nav-menu">
 
-            {{-- <li class="nav-item form-check form-switch ">
-                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-            </li> --}}
             <li class="nav-item">
                 <a class="nav-link active" href="{{ url('/') }}">Home</a>
             </li>
 
             <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/contact') }}">Contact</a>
+                    <a class="nav-link" href="#footer">Contact</a>
                 </li>
             <li class="nav-item">
                 <a class="nav-link blogsTab" href="{{ url('/blogs') }}">Blogs</a>
             </li>
 
             @auth
+
+                @if (Gate::allows('auth-user',auth::user()->status))
+
                 <li class="nav-item">
                     <a href="https://tinyurl.com/22xaw8n6" target="_blank" class="nav-link database">Data-base</a>
                 </li>
-                @if (Gate::allows('auth-user',auth::user()->status))
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('admin/dashboard') }}">Manage</a>
 
@@ -92,7 +85,13 @@
                     <a class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
                         aria-expanded="false">
 
+                        @if (Gate::allows('auth-user',Auth::user()->status))
                         <span class="badge bg-danger rounded-pill pb-2 px-3">{{ Auth::user()->name }}</span>
+                        @else
+                        <span class="badge bg-info rounded-pill pb-2 px-3">{{ Auth::user()->name }}</span>
+                        @endif
+
+
 
                     </a>
                     <ul class="dropdown-menu">
@@ -140,7 +139,7 @@
 
 
 
-    <div class="container-fluid body mx-0 ">
+    <div class="container-fluid body">
 
         <div class="intro">
             @yield('intro')
@@ -166,7 +165,7 @@
         <div class="blog-content">
             @yield('blogs')
         </div>
-        <div class="footer">
+        <div class="footer" id="footer">
             @yield('footer')
         </div>
     </div>

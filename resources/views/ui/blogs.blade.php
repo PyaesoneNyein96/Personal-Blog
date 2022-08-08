@@ -2,12 +2,12 @@
 
 @section('title', 'Blogs')
 
-@section('intro')
+@section('blogs')
     {{-- <link rel="stylesheet" href="{{ URL::asset('css/blogs.css') }}"> --}}
 
 
 
-    <div class="row mx-0 mt-4 ">
+    <div class="row mx-0">
         <div class="col-lg-8 col-9 blog-left">
 
             @foreach ($Blogs as $blog)
@@ -18,10 +18,11 @@
                         </div>
                         <h5>{{ $blog->title }}</h5>
                         <div class="card-subtitle">
-                            <b>Date:</b> <small class="text-muted"> {{ date('d-m-Y', strtotime($blog->created_at)) }} </small>
+                            <b>Date:</b> <small class="text-muted"> {{ date('d-m-Y', strtotime($blog->created_at)) }}
+                            </small>
                             <b>, </b> <small class="text-muted"> {{ $blog->created_at->diffForHumans() }}</small> <br>
-                               Category: <span class="text-success small">
-                                {{$blog->category->name}}
+                            Category: <span class="text-success small">
+                                {{ $blog->category->name }}
                             </span>
                         </div>
                     </div>
@@ -61,10 +62,11 @@
         <div class="col-lg-4 col-3 blog-right">
             <div class="row">
 
-                <form action="{{url('/blogs/search')}}" method="get">
+                <form action="{{ url('/blogs/search') }}" method="get">
                     @csrf
                     <div class="input-group search mt-2">
-                        <input type="text" class="form-control search-input" name="searchItem" placeholder="Search ..." required>
+                        <input type="text" class="form-control search-input" name="searchItem" placeholder="Search ..."
+                            required>
                         <button class="btn btn-outline-light btn-search"><i class="fas fa-search"></i> </button>
                     </div>
 
@@ -85,7 +87,8 @@
                 <div class="title-category text-light">Categories</div>
                 @foreach ($categories as $category)
                     <div class="list-category">
-                            <a href="{{url("/blogs/searchByCategory/$category->id")}}" class="category-link">{{ $category->name }}</a>
+                        <a href="{{ url("/blogs/searchByCategory/$category->id") }}"
+                            class="category-link">{{ $category->name }}</a>
                     </div>
                 @endforeach
             </div>
@@ -93,6 +96,57 @@
 
     </div>
 
+@endsection
 
 
+@section('footer')
+    <div class="container-fluid mx-0 px-0 footer-container mt-5">
+
+        {{-- <img src="{{ asset('image/2203_w026_n002_1524b_p1_1524.jpg') }}" class=" footer-img" alt=""> --}}
+        <img src="{{ asset('image/background1.jpg') }}" class=" footer-img" alt="">
+        <div class="row footer-row">
+            <div class="col-2 ">
+                <ul class="list-footer text-start">
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Feedback</a></li>
+                    <li><a href="">Blog</a></li>
+                </ul>
+            </div>
+            <div class="col-2  ">
+                <ul class="list-footer text-start">
+                    <li><a href="">09-xxx-xxx-xxx</a></li>
+                    <li><a href="">Skills</a></li>
+                    <li><a href="">Management</a></li>
+                    <li><a href="">Info</a></li>
+                    {{-- <li><a href="">Contact</a></li> --}}
+
+                </ul>
+            </div>
+            <div class="col-md-8 footer-7">
+                <div class="footer-head mb-2">
+                    Thank you for your time.
+                </div>
+                <p class="footer-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis inventore dolorum minima praesentium
+                    explicabo ut, unde beatae atque iure quidem quo esse nisi saepe adipisci ipsum molestias quae
+                    repudiandae facere.
+                </p>
+                <div class="d-flex footer-icon">
+                    <li><i class="fab fa-facebook mx-2 fa-xl"></i></li>
+                    <li><i class="fab fa-instagram mx-2 fa-xl"></i></li>
+                    <li><i class="fab fa-twitter mx-2 fa-xl"></i></li>
+                    <li><i class="fab fa-github mx-2 fa-xl"></i></li>
+                </div>
+
+                <img src="{{ asset('image/—Pngtree—young guy programmer freelancer working_5369036.png') }}"
+                    class="img-fluid avator-blog" alt="">
+            </div>
+
+            <div class="copy-right small text-muted">
+                ©2022 All rights reserved
+                Privacy Policy
+            </div>
+        </div>
+    </div>
 @endsection

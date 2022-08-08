@@ -41,17 +41,14 @@
 
                             <form method="post" action="{{ "/blogs/like/$detailBlog->id" }}">
                                 @csrf
-                                <button type="submit" class="bg-transparent rounded-circle text-info mb-2">
-                                    @if(Auth::check())
-                                    <i
-                                    class=" fa-regular fa-heart value  @if ($likeStatus) @if ($likeStatus->type == 'like') fas fa-heart text-danger @endif
-                                @endif">
-                                </i>
-
-                                    @endif
-
-                                </button>
-
+                                    @auth
+                                    <button type="submit" class="bg-transparent rounded-circle text-info mb-2">
+                                    <i disabled class=" fa-regular fa-heart value  @if ($likeStatus)
+                                     @if ($likeStatus->type == 'like')
+                                        fas fa-heart text-danger @endif @endif" >
+                                    </i>
+                                    </button>
+                                   @endauth
 
                                 <span class="text-light">
                                     @if ($Likereact->count() < '2')
@@ -60,7 +57,6 @@
                                         {{ $Likereact->count() }} Likes
                                     @endif
                                 </span>
-
                             </form>
 
 
@@ -69,7 +65,7 @@
 
 
 
-                        <div class="down-edge">
+                        <div class="down-edge mt-2">
                             <span><a class="btn btn-info text-light mb-2" href="{{ '\blogs' }}" type="submit">Back
                                 </a>
                             </span>
