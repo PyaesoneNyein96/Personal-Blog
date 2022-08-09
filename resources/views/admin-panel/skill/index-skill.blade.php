@@ -7,11 +7,11 @@
 
 
         @if (session('info'))
-        <div class="alert alert-success alert-dismissible show fade">
-            <div> {{ session('info') }}</div>
-            <button class="btn-close float-end" data-bs-dismiss="alert"></button>
-        </div>
-    @endif
+            <div class="alert alert-success alert-dismissible show fade">
+                <div> {{ session('info') }}</div>
+                <button class="btn-close float-end" data-bs-dismiss="alert"></button>
+            </div>
+        @endif
         <div class="card">
             <div class="card-header">
                 <div class="row">

@@ -42,27 +42,6 @@ Route::post("/blogs/like/{blog_id}",[
     ReactController::class, 'like'
 ]);
 
-// Route::post("/blogs/like/{blog_id}",[
-//     ReactController::class, 'like'
-// ]);
-
-// Comments ----
-// Route::post("/blogs/comment/{blog_id}",[
-//     CommentController::class, 'comment'
-// ]);
-
-// Route::post("/blogs/comment",[
-//     CommentController::class, 'createComment'
-// ]);
-
-// Route::get("/blogs/commentDelete/{id}",[
-//     CommentController::class, 'deleteComment'
-// ]);
-
-// Route::get("/blogs/status/{id}",[
-//     CommentController::class, 'commentHide'
-// ]);
-
 
 Route::group(['prefix' => 'blogs', 'middleware'=>'auth','isAdmin'], function(){
     Route::post("/comment",[
@@ -77,15 +56,6 @@ Route::group(['prefix' => 'blogs', 'middleware'=>'auth','isAdmin'], function(){
         CommentController::class, 'commentHide'
     ]);
 });
-
-//---- Admin-Route -----
-
-// Route::group(['middleware'=>['auth','isAdmin']],function(){
-//     Route::get('/admin',[
-//         AdminDashboardController::class,'index'
-//     ]);
-// });
-//  not included (prefix)
 
 
 Route::group(['prefix'=>'admin','middleware'=>['auth','isAdmin']],function(){

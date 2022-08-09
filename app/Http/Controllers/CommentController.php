@@ -16,8 +16,6 @@ class CommentController extends Controller
         }
 
         request()->validate([
-            // 'blog_id' => 'required',
-            // 'user_id' => 'required',
             'content' => 'required',
         ]);
     //   $comment = Comment::create([
@@ -36,7 +34,6 @@ class CommentController extends Controller
 
     public function deleteComment($id){
         $delComment = Comment::find($id);
-        // dd($delComment->id);
         $delComment->delete();
         return back();
     }
@@ -49,15 +46,6 @@ class CommentController extends Controller
       $hideCmt->update([
         'status' => $result
       ]);
-        // if($hideCmt->status == 'show'){
-        //     $hideCmt->update([
-        //         'status' => 'hide',
-        //     ]);
-        // }else{
-        //     $hideCmt->update([
-        //         'status' => 'show',
-        //     ]);
-        // }
         return back()->with('info', 'Comment status changed successfully!');
     }
 

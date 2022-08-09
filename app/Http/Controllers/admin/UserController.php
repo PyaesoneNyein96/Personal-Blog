@@ -9,12 +9,7 @@ use App\Models\Blog;
 
 class UserController extends Controller
 {
-    // public function index() {
-    //     $userdata = User::all();
-    //     return view('admin-panel.users.index',[
-    //         'userdata' => $userdata,
-    //     ]);
-    // }
+
     public function index(){
         // $userdata = User::all();
         $userdata = User::paginate(10);
@@ -27,26 +22,6 @@ class UserController extends Controller
             'editData' => $editData,
         ]);
     }
-
-    // public function update($id){
-    //     $update = User::find($id);
-    //     $update->update([
-    //         'name'  => $request->name,
-    //         'email' => $request->email,
-    //         'status'=> $request->status,
-    //     ]);
-    // }
-
-    // public function update($id){
-    //     $update = User::find($id);
-    //     $update->name = request()->name;
-    //     $update->email = request()->email;
-    //     $update->status= request()->status;
-    //     // $update->password = request()->password;
-    //     $update->update();
-
-    //     return redirect('admin/users');
-    // }
 
 
 
@@ -74,16 +49,11 @@ class UserController extends Controller
     public function delete($id){
 
         $delete = User::find($id);
-        // $del = Blog::where('user_id', $id)->get();
-        // $del->delete();
-
         $delete->delete();
 
 
-        // return back()->with('info', "User \"$delete->name\"and all of his Blogs have been deleted !");
-        return back()->with('info', "User $delete->name and all of his Blogs have been deleted !");
 
-        // return back()->with('del-info', "\"$delete->name\" has been deleted");
+        return back()->with('info', "User $delete->name and all of his Blogs have been deleted !");
     }
 
 }

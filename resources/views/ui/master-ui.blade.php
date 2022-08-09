@@ -12,9 +12,8 @@
 
     <script src="https://kit.fontawesome.com/fa388adf8c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    {{-- <link rel="stylesheet" href="css/style.css"> --}}
-    <link rel="stylesheet" href="{{asset('css/blogs.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/blogs.css') }}">
 
     <title>@yield('title')</title>
 </head>
@@ -23,8 +22,6 @@
 
 
 
-
-    {{-- insted code -----------------------------******* --}}
     <nav class="navbar">
         <a href="#" class="navbar-brand">
             <div class="code-sign">
@@ -43,34 +40,31 @@
             </li>
 
             <li class="nav-item">
-                    <a class="nav-link" href="#footer">Contact</a>
-                </li>
+                <a class="nav-link" href="#footer">Contact</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link blogsTab" href="{{ url('/blogs') }}">Blogs</a>
             </li>
 
             @auth
 
-                @if (Gate::allows('auth-user',auth::user()->status))
+                @if (Gate::allows('auth-user', auth::user()->status))
+                    <li class="nav-item">
+                        <a href="https://tinyurl.com/22xaw8n6" target="_blank" class="nav-link database">Data-base</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('admin/dashboard') }}">Manage</a>
 
-                <li class="nav-item">
-                    <a href="https://tinyurl.com/22xaw8n6" target="_blank" class="nav-link database">Data-base</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('admin/dashboard') }}">Manage</a>
-
-                </li>
+                    </li>
                 @endif
 
             @endauth
             @guest
                 <li class="nav-item">
                     <a class="nav-link" href="#about">About</a>
-                    {{-- <audio src="{{asset('storage\audioEffect\mixkit-arcade-game-jump-coin-216.wav')}}" class="effect"></audio> --}}
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#project">Project</a>
-                    {{-- <audio src="{{asset('storage\audioEffect\mixkit-arcade-game-jump-coin-216.wav')}}" class="effect"></audio> --}}
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/login') }}">Log-in</a>
@@ -84,15 +78,11 @@
                 <li class="nav-item dropdown pt-2">
                     <a class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
                         aria-expanded="false">
-
-                        @if (Gate::allows('auth-user',Auth::user()->status))
-                        <span class="badge bg-danger rounded-pill pb-2 px-3">{{ Auth::user()->name }}</span>
+                        @if (Gate::allows('auth-user', Auth::user()->status))
+                            <span class="badge bg-danger rounded-pill pb-2 px-3">{{ Auth::user()->name }}</span>
                         @else
-                        <span class="badge bg-info rounded-pill pb-2 px-3">{{ Auth::user()->name }}</span>
+                            <span class="badge bg-info rounded-pill pb-2 px-3">{{ Auth::user()->name }}</span>
                         @endif
-
-
-
                     </a>
                     <ul class="dropdown-menu">
                         <button class="dropdown-item logout" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -109,8 +99,9 @@
             <div class="hamburger line-3"></div>
         </div>
 
-
     </nav>
+
+    {{-- logout alert model --}}
 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -132,10 +123,7 @@
             </div>
         </div>
     </div>
-    {{-- insted code end -----------------------------******* --}}
 
-
-    {{-- end of logout alert-box --}}
 
 
 
@@ -172,9 +160,7 @@
 
 
 
-    <script src="{{URL::asset("js/bootstrap.bundle.min.js")}}" ></script>
-    {{-- <script src="{{ url('js/master.js') }}"></script>
-    <script src="{{ url('js/ui.js') }}"></script> --}}
+    <script src="{{ URL::asset('js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ URL::asset('js/ui.js') }}"></script>
     <script src="{{ URL::asset('js/master.js') }}"></script>
 

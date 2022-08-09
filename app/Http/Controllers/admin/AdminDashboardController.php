@@ -15,15 +15,7 @@ use File;
 class AdminDashboardController extends Controller
 {
 
-// [
-//     public function index(){
-//         if(Gate::allows('auth-user')){
-//             return view('admin-panel.dsahboard');
-//         }else{
-//             return view('ui.index');
-//         }
-//     }
-// ]
+
 
 
     public function index(){
@@ -31,9 +23,7 @@ class AdminDashboardController extends Controller
         return view('admin-panel.dashboard',compact('adminUser'));
     }
 
-    // public function __construct(){
-    //     $this->middleware(['auth','isAdmin']);
-    // }
+
 
 
 
@@ -47,7 +37,7 @@ class AdminDashboardController extends Controller
     public function updateAdmin(Request $request,$id){
         $userupdate = User::find($id);
 
-        // dd($userupdate);
+
        $validateData = $request->validate([
             'name' => 'required',
             'email' => 'required',

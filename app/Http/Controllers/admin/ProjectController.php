@@ -18,8 +18,6 @@ class ProjectController extends Controller
         $projects = Project::latest()->paginate(4);
         return view('admin-panel.Projects.index-project',compact('projects'));
 
-        // $projects = Project::latest()->paginate();
-        // return view('admin-panel.Projects.index-project',compact('projects'));
     }
 
     /**
@@ -42,13 +40,7 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-    //   $validator = validator($request->all(),[
-    //     'name' =>'required',
-    //     'url'  =>'required',
-    //   ]);
-    //   if($validator->fails()){
-    //     return back();
-    //   }
+
       $request->validate([
         'name' =>'required',
         'url'  =>'required',

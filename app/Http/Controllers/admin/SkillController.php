@@ -42,13 +42,6 @@ class SkillController extends Controller
             'name'=>'required',
             'percent'=>'required',
         ]);
-        // $validator = validator($request->all(),[
-        //     'name' =>'required',
-        //     'percent'=>'required',
-        // ]);
-        // if($validator->fails()){
-        //     return back()->withErrors($validator);
-        // }
 
        Skill::create([
         'name'=>$request->name,
@@ -106,7 +99,6 @@ class SkillController extends Controller
       return redirect('/admin/skills')->with('info',"Your Skill
        \"$updateSkill->name\" was Updated from skill level \"$beforeSkill->percent\" to \"$updateSkill->percent\" !");
 
-        // $dkillUpdate = Skill::
     }
 
     /**

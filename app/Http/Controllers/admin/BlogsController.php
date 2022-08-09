@@ -114,13 +114,13 @@ class BlogsController extends Controller
 
         $Blogs = Blog::find($id);
 
-        // dd($Blogs->id);
+
        $data = $request->validate([
             'title'=>'required',
             'image'=>'nullable|image|mimes:png,jpg',
             'category_id'=>'required',
             'content'=>'required',
-            // 'user_id'=>'required',
+
         ]);
 
         if($request->hasFile('image'))
@@ -133,12 +133,12 @@ class BlogsController extends Controller
             $image->StoreAs('public/blogs-img',$imageName);
 
             $data['image'] = $imageName;
-            // $data['user_id'] = Auth::user()->id;
+
         }
         $Blogs->update($data);
 
         return redirect()->route('blogs.index')->with('info','susccessfully updated!');
-        // return back()->with('info','susccessfully updated!');
+
     }
 
     /**

@@ -21,11 +21,11 @@
 
                 </div>
                 @if (session('info'))
-                <div class="alert alert-success alert-dismissible show fade">
-                    <div> {{ session('info') }}</div>
-                    <button class="btn-close float-end" data-bs-dismiss="alert"></button>
-                </div>
-            @endif
+                    <div class="alert alert-success alert-dismissible show fade">
+                        <div> {{ session('info') }}</div>
+                        <button class="btn-close float-end" data-bs-dismiss="alert"></button>
+                    </div>
+                @endif
             </div>
 
             <div class="card-body">
@@ -36,19 +36,18 @@
                             <tr>
                                 <th>No.</th>
                                 <th>Name</th>
-                                {{-- <th>Percent</th> --}}
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($categories as $category)
                                 <tr>
-                                    <td class="small">{{ $loop->index + $categories->firstItem()}}</td>
+                                    <td class="small">{{ $loop->index + $categories->firstItem() }}</td>
                                     <td class="small">{{ $category->name }}</td>
                                     <td class="">
 
 
-                                        <form action="{{ route('Categories.destroy',$category->id) }}" method="post">
+                                        <form action="{{ route('Categories.destroy', $category->id) }}" method="post">
                                             @csrf @method('delete')
                                             <a href="{{ url("admin/Categories/$category->id/edit") }}"
                                                 class="btn btn-success btn-sm">

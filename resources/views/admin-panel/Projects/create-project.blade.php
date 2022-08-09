@@ -19,22 +19,21 @@
                 <div class="card-body">
                     <div class="mb-2">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control my-1 @error('name')
-                        is-invalid
-                        @enderror" name="name" value="{{old('name')}}" placeholder="Project Name ... ">
+                        <input type="text" class="form-control my-1 @error('name') is-invalid @enderror" name="name"
+                            value="{{ old('name') }}" placeholder="Project Name ... ">
                         @error('name')
-                        <small class="text-danger">
-                            {{$message}}
-                        </small>
+                            <small class="text-danger">
+                                {{ $message }}
+                            </small>
                         @enderror
                     </div>
                     <div class="mb-2">
                         <label for="url">Project Actress (url)</label>
-                        <input type="text" class="form-control my-1 @error('url')
-                            is-invalid @enderror" name="url" value="{{old('url')}}" placeholder="Project URL ... ">
+                        <input type="text" class="form-control my-1 @error('url') is-invalid @enderror" name="url"
+                            value="{{ old('url') }}" placeholder="Project URL ... ">
                         @error('url')
                             <small class="text-danger">
-                                {{$message}}
+                                {{ $message }}
                             </small>
                         @enderror
                     </div>

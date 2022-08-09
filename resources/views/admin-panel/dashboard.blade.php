@@ -18,8 +18,6 @@
                     <div class="card mb-3 bg-transparent">
                         <div class="card-header">
                             <div class="admin-profile">
-                                {{-- <img src="{{ url('https://rb.gy/egtmqs') }}" class="img-fluid w-50" alt="Recent profile"> --}}
-                                {{-- <input type="file" name="image" class="form-control w-50 h-25 d-inline-block align-bottom"> --}}
 
                                     <img src="{{ asset("storage/profile-img/$user->image") }}" class=" w-50 mx-3 mx-50 h-50" alt="profile">
 

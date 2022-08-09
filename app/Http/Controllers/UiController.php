@@ -31,7 +31,6 @@ class UiController extends Controller
     public function indexBlogs(){
         $categories = Category::all();
         $Blogs = Blog::latest()->paginate(6);
-        // $Blogs = Blog::latest()->get();
 
         return view( 'ui.blogs',compact('categories','Blogs'));
     }
@@ -40,7 +39,6 @@ class UiController extends Controller
 
         $detailBlog = Blog::find($id);
         $detailBlogCmt = Comment::where('blog_id',$id)->where('status','show')->get();
-        // dd($detailBlog->user);
         $Likereact = React::where('blog_id',$detailBlog->id)->where('type','like')->get();
 
         $Dislikereact = React::where('blog_id',$detailBlog->id)->where('type','dislike')->get();
@@ -55,8 +53,6 @@ class UiController extends Controller
 
     public function Search(Request $request){
         $search = "%$request->searchItem%";
-        // $search = $_GET['searchItem'];
-        // $search = $_REQUEST["searchItem"];
         $categories = Category::all();
         $category = Category::where('name','=',$search)->get();
 

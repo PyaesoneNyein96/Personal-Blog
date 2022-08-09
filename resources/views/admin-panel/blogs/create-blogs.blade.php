@@ -17,7 +17,8 @@
                         <div class="card-body">
                             <div class="from-group mb-2">
                                 <label for="image">Image</label><br>
-                                <input type="file" name="image" value="{{old('image')}}" class="form-control w-50 @error('image') is-invalid @enderror">
+                                <input type="file" name="image" value="{{ old('image') }}"
+                                    class="form-control w-50 @error('image') is-invalid @enderror">
                                 @error('image')
                                     <small class="text-danger">
                                     </small>
@@ -66,7 +67,7 @@
                             </div>
 
                         </div>
-                        <input type="hidden" value="{{ Auth::user()->id}} " name="user_id">
+                        <input type="hidden" value="{{ Auth::user()->id }} " name="user_id">
 
                         <div class="card-footer">
                             <button class="btn btn-primary" type="submit">

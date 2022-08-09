@@ -3,9 +3,6 @@
 @section('title', 'Blogs')
 
 @section('blogs')
-    {{-- <link rel="stylesheet" href="{{ URL::asset('css/blogs.css') }}"> --}}
-
-
 
     <div class="row mx-0">
         <div class="col-lg-8 col-9 blog-left">
@@ -34,20 +31,6 @@
 
                     </div>
 
-                    {{-- <span>
-                            {{$Likereact->count()}} Likes
-                        </span><span>,</span>
-                        <span>
-                            {{$Dislikereact->count()}} dislike
-                        </span>
-                        <span>{{$blog->id}}</span> --}}
-
-                    {{-- <form method="post">
-                            @csrf
-                            <button class="border border-transparent rounded-circle text-danger" formaction="{{ "/blogs/like/$blog->id" }}" type="submit" >
-                                <i class=" fa-regular fa-heart value"></i>
-                            </button>
-                        </form> --}}
                 </div>
             @endforeach
             <div class="card-footer">
@@ -73,12 +56,6 @@
                     <div class="input-group search-change mt-4">
                         <i class="fas fa-search fa-2xl btn-fake"></i>
                     </div>
-                    {{-- <div class="search-model">
-                        <input type="text" class="form-control input-change" placeholder="Search ...">
-                        <button class="btn btn-outline-light btn-change rounded-circle">
-
-                        </button>
-                    </div> --}}
                 </form>
 
             </div>
@@ -102,7 +79,7 @@
 @section('footer')
     <div class="container-fluid mx-0 px-0 footer-container mt-5">
 
-        {{-- <img src="{{ asset('image/2203_w026_n002_1524b_p1_1524.jpg') }}" class=" footer-img" alt=""> --}}
+
         <img src="{{ asset('image/background1.jpg') }}" class=" footer-img" alt="">
         <div class="row footer-row">
             <div class="col-2 ">
@@ -119,8 +96,6 @@
                     <li><a href="">Skills</a></li>
                     <li><a href="">Management</a></li>
                     <li><a href="">Info</a></li>
-                    {{-- <li><a href="">Contact</a></li> --}}
-
                 </ul>
             </div>
             <div class="col-md-8 footer-7">

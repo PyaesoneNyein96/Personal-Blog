@@ -17,7 +17,6 @@
                             Date:
                         </span>
 
-                        {{-- <small class="text-light"> {{ $detailBlog->created_at->diffForHumans() }}</small> --}}
                         <small class="text-light"> {{ date('d-M-Y', strtotime($detailBlog->created_at)) }},</small>
                         <small class="text-light"> {{ $detailBlog->created_at->diffForHumans() }}</small>
 
@@ -39,25 +38,25 @@
 
 
 
-                            <form method="post" action="{{ "/blogs/like/$detailBlog->id" }}">
-                                @csrf
-                                    @auth
-                                    <button type="submit" class="bg-transparent rounded-circle text-info mb-2">
-                                    <i disabled class=" fa-regular fa-heart value  @if ($likeStatus)
-                                     @if ($likeStatus->type == 'like')
-                                        fas fa-heart text-danger @endif @endif" >
+                        <form method="post" action="{{ "/blogs/like/$detailBlog->id" }}">
+                            @csrf
+                            @auth
+                                <button type="submit" class="bg-transparent rounded-circle text-info mb-2">
+                                    <i disabled
+                                        class=" fa-regular fa-heart value  @if ($likeStatus) @if ($likeStatus->type == 'like')
+                                        fas fa-heart text-danger @endif @endif">
                                     </i>
-                                    </button>
-                                   @endauth
+                                </button>
+                            @endauth
 
-                                <span class="text-light">
-                                    @if ($Likereact->count() < '2')
-                                        {{ $Likereact->count() }} Like
-                                    @else
-                                        {{ $Likereact->count() }} Likes
-                                    @endif
-                                </span>
-                            </form>
+                            <span class="text-light">
+                                @if ($Likereact->count() < '2')
+                                    {{ $Likereact->count() }} Like
+                                @else
+                                    {{ $Likereact->count() }} Likes
+                                @endif
+                            </span>
+                        </form>
 
 
 
@@ -73,47 +72,39 @@
                             <div class="by text-white float-end">
                                 @if (Gate::allows('normal-user', auth::user()))
                                     {{-- By: {{ auth::user()->name }} --}}
-                                    By: {{ $detailBlog->user->name}}
+                                    By: {{ $detailBlog->user->name }}
 
                                 @endif
 
                             </div>
                         </div>
 
-                {{-- @if ({{$detailBlog->comments->status == 'show'}}) --}}
+                        @auth
+                            <ul class="list-group cmt-box d-block mb-3">
+                                <li class="list-group-item active">Comments
+                                    <span class="badge bg-warning rounded-circle">
+                                        {{ $detailBlogCmt->count() }}
+                                    </span>
+                                </li>
+                                @foreach ($detailBlogCmt as $comment)
+                                    @if (Gate::allows('cmt-del', $comment))
+                                        <a href="{{ url("/blogs/commentDelete/$comment->id") }}"
+                                            class="btn btn-close float-end mt-3 mx-2"></a>
+                                    @endif
 
 
-                  @auth
-                  <ul class="list-group cmt-box d-block mb-3">
-                    <li class="list-group-item active">Comments
-                        <span class="badge bg-warning rounded-circle">
-                            {{ $detailBlogCmt->count() }}
-                        </span>
-                    </li>
-                    @foreach ($detailBlogCmt as $comment)
+                                    <li class="list-group-item my-1 rounded">{{ $comment->content }} <br>
+                                        By:<small class="text-info @if ($comment->user->status == 'admin') text-danger @endif">
+                                            {{ $comment->user->name }}
+                                        </small>
+                                        <span class="text-secondary small">
+                                            {{ $comment->created_at->diffForHumans() }}
+                                        </span>
+                                    </li>
+                                @endforeach
 
-                        @if (Gate::allows('cmt-del', $comment))
-                            <a href="{{ url("/blogs/commentDelete/$comment->id") }}"
-                                class="btn btn-close float-end mt-3 mx-2"></a>
-                        @endif
-
-
-                        <li class="list-group-item my-1 rounded">{{ $comment->content }} <br>
-                            By:<small class="text-info @if ($comment->user->status == 'admin') text-danger @endif">
-                                {{ $comment->user->name }}
-                            </small>
-                                <span class="text-secondary small">
-                                    {{ $comment->created_at->diffForHumans() }}
-                                </span>
-                        </li>
-                    @endforeach
-
-                </ul>
-                  @endauth
-                  {{-- @endif --}}
-
-
-                        {{-- ----------- --}}
+                            </ul>
+                        @endauth
 
 
                         <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -129,7 +120,8 @@
                                 <div id="flush-collapseOne" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
 
-                                    <form action="{{ url('blogs/comment') }}" method="post" class="form-group bg-transparent">
+                                    <form action="{{ url('blogs/comment') }}" method="post"
+                                        class="form-group bg-transparent">
                                         <div class="accordion-body px-0">
                                             @csrf
                                             <input type="hidden" value="{{ $detailBlog->id }} " name="blog_id">
@@ -141,13 +133,6 @@
                                 </div>
                             </div>
                         </div>
-
-
-
-
-                        {{-- ----------- --}}
-
-
 
                     </div>
                 </div>

@@ -13,8 +13,7 @@
             <img src="https://rb.gy/bipzcv" alt="" class=" backgroundcover">
 
             <div class="col-md-6 left-section">
-                {{-- <img src="https://rb.gy/egtmqs" alt="Profile" class="profile"> --}}
-                <img src="{{asset("/storage/profile-img/$profileUser->image")}}" alt="Profile" class="profile">
+                <img src="{{ asset("/storage/profile-img/$profileUser->image") }}" alt="Profile" class="profile">
             </div>
 
             <div class="col-md-6 right-section">
@@ -25,15 +24,13 @@
                     i'm Beginner Web Developer.</h5>
                 <br>
                 <h5 class="mt-3 right-text"><i><b class="color-text-2">
-                            {{-- Can I help you with something in your business? --}}
                             Welcome to my Personal Blog website
                         </b> </i>
-
-                    {{-- &#128521; --}}
                 </h5>
                 <h5><b class="text-info">To explore in detail -</b><br>
-                <h6>Email - psn@gmail.com <br>
-                Password - password</h6></h5>
+                    <h6>Email - psn@gmail.com <br>
+                        Password - password</h6>
+                </h5>
             </div>
         </div>
     </div>
@@ -93,18 +90,12 @@
                 <div class="aboutmeparagraph">
                     <div class="text-light">
                         <h3>Info</h3>
-                        {{-- <a href="#" class="nav-link h5">Check my Resume</a> --}}
                         <p class=" text-justify text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
                             illum eligendi, dolores dolore
                             excepturi magni eum, totam animi, consectetur ut pariatur autem quibusdam assumenda vero. Quis
                             ratione sint voluptatum? Eligendi!
                         </p>
                     </div>
-
-
-
-
-
                     <a href="https://github.com/PyaesoneNyein96" target="_blank" class="nav-link h5">Here is my Github
                         address ...</a>
                 </div>
@@ -206,16 +197,13 @@
 
                                 </div>
                             </div>
-                            {{-- <div class="card-footer">
-                                <a href="{{route(' Categories.index')}}">Detail Blogs</a>
-                            </div> --}}
                         </a>
 
                     </div>
                 </div>
             @endforeach
 
-            <div class="col-md-4 col-lg-3 mb-2 more-blogs border-light"> {{-- style=" auto;overflow:hidden" --}}
+            <div class="col-md-4 col-lg-3 mb-2 more-blogs border-light">
                 <a href="{{ url('blogs/') }}">
                     <div class="card pb-1 bg-transparent text-center">
                         <div class="h2 px-2 mt-2 card-header">
@@ -243,25 +231,17 @@
 
 @section('footer')
     <div class="container-fluid mx-0 px-0 footer-container">
-        {{-- <img src="{{ asset('image/2203_w026_n002_1524b_p1_1524.jpg') }}" class=" footer-img" alt=""> --}}
         <img src="{{ asset('image/background1.jpg') }}" class=" footer-img" alt="">
         <div class="row footer-row">
             <div class="col-2 ">
                 <ul class="list-footer text-start">
                     <li><a href="">Contact</a></li>
-                    {{-- <li><a href=""></a></li>
-                    <li><a href="">Feedback</a></li>
-                    <li><a href="">Blog</a></li> --}}
                 </ul>
             </div>
             <div class="col-2  ">
                 <ul class="list-footer text-start">
                     <li><a href="">{{ $profileUser->phone }}</a></li>
-                    <li><a href="">{{$profileUser->email}}</a></li>
-                    {{-- <li><a href="">Management</a></li>
-                    <li><a href="">Info</a></li> --}}
-                    {{-- <li><a href="">Contact</a></li> --}}
-
+                    <li><a href="">{{ $profileUser->email }}</a></li>
                 </ul>
             </div>
             <div class="col-md-8 footer-7">

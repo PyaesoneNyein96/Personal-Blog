@@ -39,11 +39,6 @@
                             </div>
                         </div>
 
-                        {{-- <div class="card-body">
-                            Project: <div class="project-img">
-                                <h1>Null</h1>
-                            </div>
-                        </div> --}}
                         <div class="card-body">
                             <hr>
                             Address:&nbsp;&nbsp;{{ $project->url }}

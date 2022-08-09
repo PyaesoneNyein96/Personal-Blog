@@ -33,18 +33,14 @@
             <tbody>
                 @if ($commentBlogDetail->comments->count() < 1)
 
-                        <td colspan="6">
-                            <div class="text-info text-muted h5 text-center">No Comment !</div>
-                        </td>
-
-
+                    <td colspan="6">
+                        <div class="text-info text-muted h5 text-center">No Comment !</div>
+                    </td>
                 @else
                     @foreach ($commentBlogDetail->comments as $cmtdetail)
                         <tr>
                             <th class="text-secondary text-center small">{{ $loop->index + 1 }}</th>
 
-                            {{-- <th class="text-secondary small">{{ explode(' ',trim($cmtdetail->user->name))[0] }}</th> --}}
-                            {{-- <th class="text-secondary ">{{ current(explode(' ',$cmtdetail->user->name)) }}</th> --}}
                             <th class="text-secondary ">{{ $cmtdetail->user->name }}</th>
                             <th class="text-secondary ">{{ $cmtdetail->user->status }}</th>
                             <th class="text-secondary text-muted w-75 ">{{ $cmtdetail->content }}</th>
@@ -54,13 +50,6 @@
                                 <form action="{{ url("blogs/status/$cmtdetail->id") }}"" method="post"
                                     style="min-width:80px">
                                     @csrf
-                                    {{-- @if ($cmtdetail->status == 'hide')
-                                <button href="" class="btn btn-secondary btn-sm">Hide <i
-                                        class="fas fa-eye-slash small"></i></button>
-                            @else
-                                <button href="" class="btn btn-success btn-sm">Open<i
-                                        class="fas fa-eye"></i></button>
-                            @endif --}}
 
                                     <button
                                         class="btn btn-sm

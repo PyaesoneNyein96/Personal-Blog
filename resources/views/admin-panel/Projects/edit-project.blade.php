@@ -18,18 +18,18 @@
                                 <label for="name">Edit Project Name</label>
                                 <input type="text" name="name" value="{{ $editProject->name ?? old('name') }}"
                                     class="form-control @error('name') is-invalid @enderror">
-                                    @error('name')
-                                        {{$message}}
-                                    @enderror
+                                @error('name')
+                                    {{ $message }}
+                                @enderror
                             </div>
 
                             <div class="mb-2 form-group">
                                 <label for="url">Edit Project Address</label>
                                 <input type="text" name="url" value="{{ $editProject->url ?? old('url') }}"
                                     class="form-control  @error('url') is-invalid @enderror">
-                                    @error('url')
-                                        {{$message}}
-                                    @enderror
+                                @error('url')
+                                    {{ $message }}
+                                @enderror
                             </div>
                         </div>
 
