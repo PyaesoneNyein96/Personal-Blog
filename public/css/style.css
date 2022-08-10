@@ -678,6 +678,10 @@ li {
     margin-bottom: 20px;
 }
 
+.footer-icon{
+    cursor: pointer;
+}
+
 .body{
     position: relative;
     bottom: 0px;

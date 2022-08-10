@@ -240,8 +240,9 @@
             </div>
             <div class="col-2  ">
                 <ul class="list-footer text-start">
-                    <li><a href="">{{ $profileUser->phone }}</a></li>
-                    <li><a href="">{{ $profileUser->email }}</a></li>
+                    <li><a href="">Phone -{{ $profileUser->phone }}</a></li>
+                   <a href="{{$profileUser->email}}"> <li><a href="">Email- {{ $profileUser->email }}</a></li></a>
+                    {{-- <li><a href="">{{ $profileUser->socialurl }}</a></li> --}}
                 </ul>
             </div>
             <div class="col-md-8 footer-7">
@@ -252,9 +253,13 @@
                     {{ $profileUser->content }}
                 </p>
                 <div class="d-flex footer-icon">
-                    <li><i class="fab fa-facebook mx-2 fa-xl"></i></li>
-                    <li><i class="fab fa-instagram mx-2 fa-xl"></i></li>
-                    <li><i class="fab fa-twitter mx-2 fa-xl"></i></li>
+                    <a href="https://www.facebook.com/pyaesone.nyein.31/">
+                        <li><i class="fab fa-facebook mx-2 fa-xl"></i></li>
+                    </a>
+                    <a href="https://www.instagram.com/pyae_sone.nyein/">
+                        <li><i class="fab fa-instagram mx-2 fa-xl"></i></li>
+                    </a>
+                    <li><i class="fab fa-twitter mx-2 fa-xl text-primary"></i></li>
                     <li><i class="fa-solid fa-envelope fa-xl mx-2"></i></i></li>
                     <li><i class="fab fa-github mx-2 fa-xl"></i></li>
                 </div>
