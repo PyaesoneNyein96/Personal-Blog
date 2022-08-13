@@ -42,7 +42,7 @@
                         <tbody>
                             @foreach ($skillData as $skills)
                                 <tr>
-                                    <td class="small">{{ $skills->id }}</td>
+                                    <td class="small">{{ $loop->index + $skillData->firstItem()}}</td>
                                     <td class="small">{{ $skills->name }}</td>
                                     <td>{{ $skills->percent }} %</td>
                                     <td class="">

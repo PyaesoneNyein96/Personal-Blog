@@ -229,29 +229,33 @@
 
 @endsection
 
+
+
 @section('footer')
     <div class="container-fluid mx-0 px-0 footer-container">
-        <img src="{{ asset('image/background1.jpg') }}" class=" footer-img" alt="">
-        <div class="row footer-row">
-            <div class="col-2 ">
-                <ul class="list-footer text-start">
+        <div class="row footer-row bg-warning">
+
+            <div class="col-md-4">
+                <ul class="list-footer">
                     <li><a href="">Contact</a></li>
+                        <li><a href="">Phone -{{ $profileUser->phone }}</a></li>
+                       <a href="{{$profileUser->email}}"> <li><a href="">
+                        Email- {{ $profileUser->email }}</a></li></a>
+                    <li><a href="">
+                        Info</a></li>
+                        <li><a href="">
+                            About</a></li>
                 </ul>
             </div>
-            <div class="col-2  ">
-                <ul class="list-footer text-start">
-                    <li><a href="">Phone -{{ $profileUser->phone }}</a></li>
-                   <a href="{{$profileUser->email}}"> <li><a href="">Email- {{ $profileUser->email }}</a></li></a>
-                    {{-- <li><a href="">{{ $profileUser->socialurl }}</a></li> --}}
-                </ul>
-            </div>
+
+
             <div class="col-md-8 footer-7">
                 <div class="footer-head mb-2">
                     Thank you for your time.
                 </div>
-                <p class="footer-text">
+                <div class="footer-text">
                     {{ $profileUser->content }}
-                </p>
+                </div>
                 <div class="d-flex footer-icon">
                     <a href="https://www.facebook.com/pyaesone.nyein.31/">
                         <li><i class="fab fa-facebook mx-2 fa-xl"></i></li>
@@ -260,8 +264,8 @@
                         <li><i class="fab fa-instagram mx-2 fa-xl"></i></li>
                     </a>
                     <li><i class="fab fa-twitter mx-2 fa-xl text-primary"></i></li>
-                    <li><i class="fa-solid fa-envelope fa-xl mx-2"></i></i></li>
-                    <li><i class="fab fa-github mx-2 fa-xl"></i></li>
+                    <li><i class="fa-solid fa-envelope fa-xl mx-2 text-primary"></i></i></li>
+                    <li><i class="fab fa-github mx-2 fa-xl text-primary"></i></li>
                 </div>
 
                 <img src="{{ asset('image/—Pngtree—young guy programmer freelancer working_5369036.png') }}"

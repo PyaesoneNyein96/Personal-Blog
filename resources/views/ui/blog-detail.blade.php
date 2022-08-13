@@ -93,8 +93,8 @@
                                     @endif
 
 
-                                    <li class="list-group-item my-1 rounded">{{ $comment->content }} <br>
-                                        By:<small class="text-info @if ($comment->user->status == 'admin') text-danger @endif">
+                                    <li class="list-group-item my-1 rounded"><p class="mb-2">{{ $comment->content }}</p>
+                                        By:<small class="text-secondary @if ($comment->user->status == 'admin') text-danger @endif">
                                             {{ $comment->user->name }}
                                         </small>
                                         <span class="text-secondary small">
@@ -107,7 +107,7 @@
                         @endauth
 
 
-                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion accordion-flush mb-5" id="accordionFlushExample">
                             <div class="accordion-item ">
                                 <h2 class="accordion-header " id="flush-headingOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"

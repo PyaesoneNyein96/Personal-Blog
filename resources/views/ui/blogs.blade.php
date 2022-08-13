@@ -77,45 +77,45 @@
 
 
 @section('footer')
-    <div class="container-fluid mx-0 px-0 footer-container mt-5">
+    <div class="container-fluid mx-0 px-0 footer-container">
+        <div class="row footer-row bg-warning">
 
-
-        <img src="{{ asset('image/background1.jpg') }}" class=" footer-img" alt="">
-        <div class="row footer-row">
-            <div class="col-2 ">
-                <ul class="list-footer text-start">
-                    <li><a href="">Contact</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Feedback</a></li>
-                    <li><a href="">Blog</a></li>
-                </ul>
-            </div>
-            <div class="col-2  ">
-                <ul class="list-footer text-start">
-                    <li><a href="">09-xxx-xxx-xxx</a></li>
-                    <li><a href="">Skills</a></li>
-                    <li><a href="">Management</a></li>
+            <div class="col-md-4">
+                <ul class="list-footer">
                     <li><a href="">Info</a></li>
+                    <li><a href="">Feedback</a></li>
+                    <li><a href="">Phone - 09-795686096</a></li>
+                    <li><a href="">
+                        Email- Pyaesonenyein.1996@gmail.com</a></li>
+                    <li><a href="">About</a></li>
                 </ul>
             </div>
+
+
             <div class="col-md-8 footer-7">
                 <div class="footer-head mb-2">
                     Thank you for your time.
                 </div>
-                <p class="footer-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis inventore dolorum minima praesentium
-                    explicabo ut, unde beatae atque iure quidem quo esse nisi saepe adipisci ipsum molestias quae
-                    repudiandae facere.
-                </p>
+                <div class="footer-text">
+                    Lorem ipsum dolor, sit amet consectet
+                    ur adipisicing elit. Impedit perspiciatis incidunt accusamus dolorum provident tenetur deserunt quisquam
+                    dolor corp
+                    oris nulla repellat illo id iusto molestiae pariatur sunt, asperiores assumenda cum.
+                </div>
                 <div class="d-flex footer-icon">
-                    <li><i class="fab fa-facebook mx-2 fa-xl"></i></li>
-                    <li><i class="fab fa-instagram mx-2 fa-xl"></i></li>
-                    <li><i class="fab fa-twitter mx-2 fa-xl"></i></li>
-                    <li><i class="fab fa-github mx-2 fa-xl"></i></li>
+                    <a href="https://www.facebook.com/pyaesone.nyein.31/">
+                        <li><i class="fab fa-facebook mx-2 fa-xl"></i></li>
+                    </a>
+                    <a href="https://www.instagram.com/pyae_sone.nyein/">
+                        <li><i class="fab fa-instagram mx-2 fa-xl"></i></li>
+                    </a>
+                    <li><i class="fab fa-twitter mx-2 fa-xl text-primary"></i></li>
+                    <li><i class="fa-solid fa-envelope fa-xl mx-2 text-primary"></i></i></li>
+                    <li><i class="fab fa-github mx-2 fa-xl text-primary"></i></li>
                 </div>
 
                 <img src="{{ asset('image/—Pngtree—young guy programmer freelancer working_5369036.png') }}"
-                    class="img-fluid avator-blog" alt="">
+                    class="img-fluid avator" alt="">
             </div>
 
             <div class="copy-right small text-muted">
